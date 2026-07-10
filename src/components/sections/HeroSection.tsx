@@ -21,17 +21,17 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      <p className="relative z-10 font-sans font-semibold text-[11px] tracking-[2px] uppercase text-accent text-center">
+      <p className="relative z-10 font-sans text-[11px] leading-[1.6] text-accent text-center">
         KECAMATAN PANGGUNGREJO · KABUPATEN BLITAR
       </p>
 
-      <h1 className="relative z-10 font-heading font-bold text-[32px] md:text-[50px] leading-[1.12] text-white text-center px-4">
+      <h1 className="relative z-10 font-heading font-bold text-[32px] md:text-[50px] leading-[1.3] text-white text-center px-4">
         Desa Balerejo,<br />
         tumbuh dari sawah<br />
         menuju sejahtera.
       </h1>
 
-      <p className="relative z-10 font-sans text-[14px] md:text-[17px] text-[#bfbfbf]/85 text-center max-w-xl px-6">
+      <p className="relative z-10 font-sans text-[14px] md:text-[17px] leading-[1.6] text-accent/85 text-center max-w-xl px-6">
         Profil, sejarah, dan data lengkap Desa Balerejo, dari pemerintahan sampai kondisi kependudukan.
       </p>
     </section>
