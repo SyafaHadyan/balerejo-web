@@ -13,7 +13,7 @@ export default function Footer() {
   const telHref = `tel:${phone.replace(/[\s]/g, "")}`;
 
   return (
-    <footer className="bg-primary p-5 flex flex-col gap-3 rounded-[8px]" aria-label="Footer">
+    <footer className="bg-primary p-5 flex flex-col gap-3 rounded-t-[8px]" aria-label="Footer">
       <div className="flex flex-col md:flex-row gap-10 xl:gap-[252px] items-start md:px-20">
         <div className="flex flex-col gap-[2px]">
           <p className="font-heading font-bold text-[20px] text-white leading-[1.3]">
