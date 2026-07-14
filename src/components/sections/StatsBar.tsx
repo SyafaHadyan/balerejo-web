@@ -30,17 +30,26 @@ export default function StatsBar() {
         </dl>
       </div>
 
-      <dl className="md:hidden grid grid-cols-2 divide-x divide-y divide-divider">
-        {STATS.map(({ value, label }) => (
-          <div key={label} className="flex flex-col items-center gap-[6px] py-6 px-4 text-center">
-            <dt className="order-2 font-sans text-[12px] leading-[1.6] text-muted">
-              {label}
-            </dt>
-            <dd className="order-1 font-heading font-bold text-[28px] leading-none text-primary">
-              {value}
-            </dd>
-          </div>
-        ))}
+      <dl className="md:hidden grid grid-cols-2 divide-y divide-divider">
+        {STATS.map(({ value, label }, index) => {
+          const isLastOdd = index === STATS.length - 1 && STATS.length % 2 !== 0;
+          return (
+            <div
+              key={label}
+              className={[
+                "flex flex-col items-center gap-[6px] py-6 px-4 text-center",
+                isLastOdd ? "col-span-2" : index % 2 === 0 ? "border-r border-divider" : "",
+              ].join(" ")}
+            >
+              <dt className="order-2 font-sans text-[12px] leading-[1.6] text-muted">
+                {label}
+              </dt>
+              <dd className="order-1 font-heading font-bold text-[28px] leading-none text-primary">
+                {value}
+              </dd>
+            </div>
+          );
+        })}
       </dl>
 
     </div>
