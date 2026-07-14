@@ -24,7 +24,7 @@ function GalleryCard({ caption, src }: { caption: string; src: string }) {
         />
       )}
       {caption && (
-        <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-primary flex items-center px-[10px]">
+        <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-primary rounded-[8px] flex items-center px-[10px]">
           <p className="font-sans font-semibold text-[11px] text-white leading-normal">
             {caption}
           </p>
