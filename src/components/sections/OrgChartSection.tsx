@@ -42,50 +42,43 @@ export default function OrgChartSection() {
         Struktur Pemerintahan
       </h2>
 
-      <div className="hidden md:flex flex-col items-center w-full">
+      {/* Desktop (xl+): T-branch from Sekretaris to 3 staff cards */}
+      <div className="hidden xl:flex flex-col items-center gap-[5px] w-full">
         <OrgCard {...ORG_CHIEF} />
         <VLine />
         <OrgCard {...ORG_SECRETARY} />
-
-        {/* T-branch connector: trunk → H-bar → 3 drops */}
-        <div className="relative w-full h-[55px]" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-[25px]" style={{ backgroundColor: SEP }} />
-          <div className="absolute top-[25px] h-[2px]" style={{ left: "calc(100% / 6)", right: "calc(100% / 6)", backgroundColor: SEP }} />
-          <div className="absolute top-[25px] w-[2px] h-[30px]" style={{ left: "calc(100% / 6 - 1px)", backgroundColor: SEP }} />
-          <div className="absolute top-[25px] w-[2px] h-[30px]" style={{ left: "calc(50% - 1px)", backgroundColor: SEP }} />
-          <div className="absolute top-[25px] w-[2px] h-[30px]" style={{ right: "calc(100% / 6 - 1px)", backgroundColor: SEP }} />
+        {/* T-branch connector: 910px = 3×300px cards + 2×5px gaps
+            trunk at center (455px), H-bar at y=45, drops to each card top */}
+        <div className="relative w-[910px] h-[75px]" aria-hidden="true">
+          <div className="absolute inset-y-0 left-1/2 -translate-x-px w-[2px]" style={{ backgroundColor: SEP }} />
+          <div className="absolute h-[2px]" style={{ top: "45px", left: "150px", right: "150px", backgroundColor: SEP }} />
+          <div className="absolute w-[2px]" style={{ top: "45px", bottom: 0, left: "149px", backgroundColor: SEP }} />
+          <div className="absolute w-[2px]" style={{ top: "45px", bottom: 0, right: "149px", backgroundColor: SEP }} />
         </div>
-
-        <div className="grid grid-cols-3 gap-[5px] w-full">
-          {ORG_STAFF.map(({ name, role }) => (
-            <div key={role} className="flex justify-center">
-              <OrgCard name={name} role={role} />
-            </div>
-          ))}
+        <div className="flex gap-[5px]">
+          <OrgCard {...ORG_STAFF[0]} />
+          <OrgCard {...ORG_STAFF[1]} />
+          <OrgCard {...ORG_STAFF[2]} />
         </div>
       </div>
 
-      <div className="md:hidden flex flex-col items-center w-full max-w-[500px] mx-auto">
+      {/* Mobile/Tablet (below xl): 2+1 layout — Kaur Keuangan + Kaur Umum side by side,
+          Kasi Pemerintahan centered below. T-branch from Sekretaris branches to the two
+          side-by-side cards; center line continues through the gap down to Kasi. */}
+      <div className="xl:hidden flex flex-col items-center w-full max-w-[500px] mx-auto gap-[5px]">
         <OrgCard {...ORG_CHIEF} />
-        <VLine h={22} />
+        <VLine h={30} />
         <OrgCard {...ORG_SECRETARY} />
         <div className="relative w-full">
-          <div
-            className="absolute top-0 h-[20px]"
-            style={{ left: "calc(25% - 4px)", right: "50%", borderTop: "1px solid " + SEP, borderLeft: "1px solid " + SEP }}
-            aria-hidden="true"
-          />
-          <div
-            className="absolute top-0 h-[20px]"
-            style={{ left: "50%", right: "calc(25% - 4px)", borderTop: "1px solid " + SEP, borderRight: "1px solid " + SEP }}
-            aria-hidden="true"
-          />
-          <div
-            className="absolute top-0 h-full"
-            style={{ left: "calc(50% - 0.5px)", width: "1px", backgroundColor: SEP }}
-            aria-hidden="true"
-          />
-          <div className="relative grid grid-cols-2 gap-x-4 gap-y-6 w-full pt-[20px]">
+          {/* Center vertical line — hidden behind opaque cards, visible in gaps */}
+          <div className="absolute inset-y-0 left-1/2 -translate-x-px w-[2px]" style={{ backgroundColor: SEP }} aria-hidden="true" />
+          {/* H-bar at y=22 — the trunk (center line from y=0→22) is visible above it */}
+          <div className="absolute h-[2px]" style={{ top: "22px", left: "calc(25% - 4px)", right: "calc(25% - 4px)", backgroundColor: SEP }} aria-hidden="true" />
+          {/* Left drop to Kaur Keuangan */}
+          <div className="absolute w-[2px] h-[22px]" style={{ top: "22px", left: "calc(25% - 4px)", backgroundColor: SEP }} aria-hidden="true" />
+          {/* Right drop to Kaur Umum */}
+          <div className="absolute w-[2px] h-[22px]" style={{ top: "22px", right: "calc(25% - 4px)", backgroundColor: SEP }} aria-hidden="true" />
+          <div className="relative grid grid-cols-2 gap-x-4 gap-y-5 w-full pt-[44px]">
             <div className="flex justify-center"><OrgCard {...ORG_STAFF[0]} /></div>
             <div className="flex justify-center"><OrgCard {...ORG_STAFF[1]} /></div>
             <div className="col-span-2 flex justify-center">
