@@ -1,61 +1,59 @@
 import React from "react";
 
-const e = process.env;
-
 const DUSUN = [
-  { name: e.NEXT_PUBLIC_DUSUN_1_NAME ?? "Dusun Krajan",     value: Number(e.NEXT_PUBLIC_DUSUN_1_VALUE ?? "812") },
-  { name: e.NEXT_PUBLIC_DUSUN_2_NAME ?? "Dusun Ngroto",     value: Number(e.NEXT_PUBLIC_DUSUN_2_VALUE ?? "654") },
-  { name: e.NEXT_PUBLIC_DUSUN_3_NAME ?? "Dusun Sumberjo",   value: Number(e.NEXT_PUBLIC_DUSUN_3_VALUE ?? "590") },
-  { name: e.NEXT_PUBLIC_DUSUN_4_NAME ?? "Dusun Karangrejo", value: Number(e.NEXT_PUBLIC_DUSUN_4_VALUE ?? "425") },
+  { name: process.env.NEXT_PUBLIC_DUSUN_1_NAME ?? "Dusun Krajan",     value: Number(process.env.NEXT_PUBLIC_DUSUN_1_VALUE ?? "812") },
+  { name: process.env.NEXT_PUBLIC_DUSUN_2_NAME ?? "Dusun Ngroto",     value: Number(process.env.NEXT_PUBLIC_DUSUN_2_VALUE ?? "654") },
+  { name: process.env.NEXT_PUBLIC_DUSUN_3_NAME ?? "Dusun Sumberjo",   value: Number(process.env.NEXT_PUBLIC_DUSUN_3_VALUE ?? "590") },
+  { name: process.env.NEXT_PUBLIC_DUSUN_4_NAME ?? "Dusun Karangrejo", value: Number(process.env.NEXT_PUBLIC_DUSUN_4_VALUE ?? "425") },
 ];
 
 const USIA = [
-  { name: e.NEXT_PUBLIC_USIA_1_LABEL  ?? "0 – 4",   value: Number(e.NEXT_PUBLIC_USIA_1_VALUE  ?? "213") },
-  { name: e.NEXT_PUBLIC_USIA_2_LABEL  ?? "5 – 9",   value: Number(e.NEXT_PUBLIC_USIA_2_VALUE  ?? "219") },
-  { name: e.NEXT_PUBLIC_USIA_3_LABEL  ?? "10 – 14", value: Number(e.NEXT_PUBLIC_USIA_3_VALUE  ?? "234") },
-  { name: e.NEXT_PUBLIC_USIA_4_LABEL  ?? "15 – 19", value: Number(e.NEXT_PUBLIC_USIA_4_VALUE  ?? "208") },
-  { name: e.NEXT_PUBLIC_USIA_5_LABEL  ?? "20 – 24", value: Number(e.NEXT_PUBLIC_USIA_5_VALUE  ?? "236") },
-  { name: e.NEXT_PUBLIC_USIA_6_LABEL  ?? "25 – 29", value: Number(e.NEXT_PUBLIC_USIA_6_VALUE  ?? "251") },
-  { name: e.NEXT_PUBLIC_USIA_7_LABEL  ?? "30 – 34", value: Number(e.NEXT_PUBLIC_USIA_7_VALUE  ?? "247") },
-  { name: e.NEXT_PUBLIC_USIA_8_LABEL  ?? "35 – 39", value: Number(e.NEXT_PUBLIC_USIA_8_VALUE  ?? "239") },
-  { name: e.NEXT_PUBLIC_USIA_9_LABEL  ?? "40 – 44", value: Number(e.NEXT_PUBLIC_USIA_9_VALUE  ?? "274") },
-  { name: e.NEXT_PUBLIC_USIA_10_LABEL ?? "45 – 49", value: Number(e.NEXT_PUBLIC_USIA_10_VALUE ?? "197") },
-  { name: e.NEXT_PUBLIC_USIA_11_LABEL ?? "50 – 54", value: Number(e.NEXT_PUBLIC_USIA_11_VALUE ?? "240") },
-  { name: e.NEXT_PUBLIC_USIA_12_LABEL ?? "55 – 59", value: Number(e.NEXT_PUBLIC_USIA_12_VALUE ?? "292") },
-  { name: e.NEXT_PUBLIC_USIA_13_LABEL ?? ">60",     value: Number(e.NEXT_PUBLIC_USIA_13_VALUE ?? "681") },
+  { name: process.env.NEXT_PUBLIC_USIA_1_LABEL  ?? "0 – 4",   value: Number(process.env.NEXT_PUBLIC_USIA_1_VALUE  ?? "213") },
+  { name: process.env.NEXT_PUBLIC_USIA_2_LABEL  ?? "5 – 9",   value: Number(process.env.NEXT_PUBLIC_USIA_2_VALUE  ?? "219") },
+  { name: process.env.NEXT_PUBLIC_USIA_3_LABEL  ?? "10 – 14", value: Number(process.env.NEXT_PUBLIC_USIA_3_VALUE  ?? "234") },
+  { name: process.env.NEXT_PUBLIC_USIA_4_LABEL  ?? "15 – 19", value: Number(process.env.NEXT_PUBLIC_USIA_4_VALUE  ?? "208") },
+  { name: process.env.NEXT_PUBLIC_USIA_5_LABEL  ?? "20 – 24", value: Number(process.env.NEXT_PUBLIC_USIA_5_VALUE  ?? "236") },
+  { name: process.env.NEXT_PUBLIC_USIA_6_LABEL  ?? "25 – 29", value: Number(process.env.NEXT_PUBLIC_USIA_6_VALUE  ?? "251") },
+  { name: process.env.NEXT_PUBLIC_USIA_7_LABEL  ?? "30 – 34", value: Number(process.env.NEXT_PUBLIC_USIA_7_VALUE  ?? "247") },
+  { name: process.env.NEXT_PUBLIC_USIA_8_LABEL  ?? "35 – 39", value: Number(process.env.NEXT_PUBLIC_USIA_8_VALUE  ?? "239") },
+  { name: process.env.NEXT_PUBLIC_USIA_9_LABEL  ?? "40 – 44", value: Number(process.env.NEXT_PUBLIC_USIA_9_VALUE  ?? "274") },
+  { name: process.env.NEXT_PUBLIC_USIA_10_LABEL ?? "45 – 49", value: Number(process.env.NEXT_PUBLIC_USIA_10_VALUE ?? "197") },
+  { name: process.env.NEXT_PUBLIC_USIA_11_LABEL ?? "50 – 54", value: Number(process.env.NEXT_PUBLIC_USIA_11_VALUE ?? "240") },
+  { name: process.env.NEXT_PUBLIC_USIA_12_LABEL ?? "55 – 59", value: Number(process.env.NEXT_PUBLIC_USIA_12_VALUE ?? "292") },
+  { name: process.env.NEXT_PUBLIC_USIA_13_LABEL ?? ">60",     value: Number(process.env.NEXT_PUBLIC_USIA_13_VALUE ?? "681") },
 ];
 
 const PENDIDIKAN = [
-  { name: e.NEXT_PUBLIC_DIDIK_1_LABEL  ?? "Tidak/Belum Sekolah", value: Number(e.NEXT_PUBLIC_DIDIK_1_VALUE  ?? "798")  },
-  { name: e.NEXT_PUBLIC_DIDIK_2_LABEL  ?? "Belum Tamat SD",      value: Number(e.NEXT_PUBLIC_DIDIK_2_VALUE  ?? "254")  },
-  { name: e.NEXT_PUBLIC_DIDIK_3_LABEL  ?? "Tamat SD/Sederajat",  value: Number(e.NEXT_PUBLIC_DIDIK_3_VALUE  ?? "1230") },
-  { name: e.NEXT_PUBLIC_DIDIK_4_LABEL  ?? "SLTP/Sederajat",      value: Number(e.NEXT_PUBLIC_DIDIK_4_VALUE  ?? "702")  },
-  { name: e.NEXT_PUBLIC_DIDIK_5_LABEL  ?? "SLTA/Sederajat",      value: Number(e.NEXT_PUBLIC_DIDIK_5_VALUE  ?? "246")  },
-  { name: e.NEXT_PUBLIC_DIDIK_6_LABEL  ?? "Diploma I/II",        value: Number(e.NEXT_PUBLIC_DIDIK_6_VALUE  ?? "5")    },
-  { name: e.NEXT_PUBLIC_DIDIK_7_LABEL  ?? "Diploma III",         value: Number(e.NEXT_PUBLIC_DIDIK_7_VALUE  ?? "4")    },
-  { name: e.NEXT_PUBLIC_DIDIK_8_LABEL  ?? "Diploma IV/Strata I", value: Number(e.NEXT_PUBLIC_DIDIK_8_VALUE  ?? "19")   },
-  { name: e.NEXT_PUBLIC_DIDIK_9_LABEL  ?? "Strata II",           value: Number(e.NEXT_PUBLIC_DIDIK_9_VALUE  ?? "0")    },
-  { name: e.NEXT_PUBLIC_DIDIK_10_LABEL ?? "Strata III",          value: Number(e.NEXT_PUBLIC_DIDIK_10_VALUE ?? "0")    },
+  { name: process.env.NEXT_PUBLIC_DIDIK_1_LABEL  ?? "Tidak/Belum Sekolah", value: Number(process.env.NEXT_PUBLIC_DIDIK_1_VALUE  ?? "798")  },
+  { name: process.env.NEXT_PUBLIC_DIDIK_2_LABEL  ?? "Belum Tamat SD",      value: Number(process.env.NEXT_PUBLIC_DIDIK_2_VALUE  ?? "254")  },
+  { name: process.env.NEXT_PUBLIC_DIDIK_3_LABEL  ?? "Tamat SD/Sederajat",  value: Number(process.env.NEXT_PUBLIC_DIDIK_3_VALUE  ?? "1230") },
+  { name: process.env.NEXT_PUBLIC_DIDIK_4_LABEL  ?? "SLTP/Sederajat",      value: Number(process.env.NEXT_PUBLIC_DIDIK_4_VALUE  ?? "702")  },
+  { name: process.env.NEXT_PUBLIC_DIDIK_5_LABEL  ?? "SLTA/Sederajat",      value: Number(process.env.NEXT_PUBLIC_DIDIK_5_VALUE  ?? "246")  },
+  { name: process.env.NEXT_PUBLIC_DIDIK_6_LABEL  ?? "Diploma I/II",        value: Number(process.env.NEXT_PUBLIC_DIDIK_6_VALUE  ?? "5")    },
+  { name: process.env.NEXT_PUBLIC_DIDIK_7_LABEL  ?? "Diploma III",         value: Number(process.env.NEXT_PUBLIC_DIDIK_7_VALUE  ?? "4")    },
+  { name: process.env.NEXT_PUBLIC_DIDIK_8_LABEL  ?? "Diploma IV/Strata I", value: Number(process.env.NEXT_PUBLIC_DIDIK_8_VALUE  ?? "19")   },
+  { name: process.env.NEXT_PUBLIC_DIDIK_9_LABEL  ?? "Strata II",           value: Number(process.env.NEXT_PUBLIC_DIDIK_9_VALUE  ?? "0")    },
+  { name: process.env.NEXT_PUBLIC_DIDIK_10_LABEL ?? "Strata III",          value: Number(process.env.NEXT_PUBLIC_DIDIK_10_VALUE ?? "0")    },
 ];
 
 const AGAMA = [
-  { label: e.NEXT_PUBLIC_AGAMA_1_LABEL ?? "Islam",    value: Number(e.NEXT_PUBLIC_AGAMA_1_VALUE ?? "2971"), pct: e.NEXT_PUBLIC_AGAMA_1_PCT ?? "91.19%" },
-  { label: e.NEXT_PUBLIC_AGAMA_2_LABEL ?? "Katholik", value: Number(e.NEXT_PUBLIC_AGAMA_2_VALUE ?? "216"),  pct: e.NEXT_PUBLIC_AGAMA_2_PCT ?? "6.63%"  },
-  { label: e.NEXT_PUBLIC_AGAMA_3_LABEL ?? "Kristen",  value: Number(e.NEXT_PUBLIC_AGAMA_3_VALUE ?? "59"),   pct: e.NEXT_PUBLIC_AGAMA_3_PCT ?? "1.81%"  },
-  { label: e.NEXT_PUBLIC_AGAMA_4_LABEL ?? "Hindu",    value: Number(e.NEXT_PUBLIC_AGAMA_4_VALUE ?? "0"),    pct: e.NEXT_PUBLIC_AGAMA_4_PCT ?? "0.00%"  },
-  { label: e.NEXT_PUBLIC_AGAMA_5_LABEL ?? "Budha",    value: Number(e.NEXT_PUBLIC_AGAMA_5_VALUE ?? "12"),   pct: e.NEXT_PUBLIC_AGAMA_5_PCT ?? "0.37%"  },
+  { label: process.env.NEXT_PUBLIC_AGAMA_1_LABEL ?? "Islam",    value: Number(process.env.NEXT_PUBLIC_AGAMA_1_VALUE ?? "2971"), pct: process.env.NEXT_PUBLIC_AGAMA_1_PCT ?? "91.19%" },
+  { label: process.env.NEXT_PUBLIC_AGAMA_2_LABEL ?? "Katholik", value: Number(process.env.NEXT_PUBLIC_AGAMA_2_VALUE ?? "216"),  pct: process.env.NEXT_PUBLIC_AGAMA_2_PCT ?? "6.63%"  },
+  { label: process.env.NEXT_PUBLIC_AGAMA_3_LABEL ?? "Kristen",  value: Number(process.env.NEXT_PUBLIC_AGAMA_3_VALUE ?? "59"),   pct: process.env.NEXT_PUBLIC_AGAMA_3_PCT ?? "1.81%"  },
+  { label: process.env.NEXT_PUBLIC_AGAMA_4_LABEL ?? "Hindu",    value: Number(process.env.NEXT_PUBLIC_AGAMA_4_VALUE ?? "0"),    pct: process.env.NEXT_PUBLIC_AGAMA_4_PCT ?? "0.00%"  },
+  { label: process.env.NEXT_PUBLIC_AGAMA_5_LABEL ?? "Budha",    value: Number(process.env.NEXT_PUBLIC_AGAMA_5_VALUE ?? "12"),   pct: process.env.NEXT_PUBLIC_AGAMA_5_PCT ?? "0.37%"  },
 ];
-const AGAMA_TOTAL = e.NEXT_PUBLIC_AGAMA_TOTAL ?? "3.258";
+const AGAMA_TOTAL = process.env.NEXT_PUBLIC_AGAMA_TOTAL ?? "3.258";
 
 const MATA_PENCAHARIAN = [
-  { label: e.NEXT_PUBLIC_MATPENG_1_LABEL ?? "Pertanian",        value: Number(e.NEXT_PUBLIC_MATPENG_1_VALUE ?? "2123"), pct: e.NEXT_PUBLIC_MATPENG_1_PCT ?? "85.32%" },
-  { label: e.NEXT_PUBLIC_MATPENG_2_LABEL ?? "Jasa/Perdagangan", value: Number(e.NEXT_PUBLIC_MATPENG_2_VALUE ?? "71"),   pct: e.NEXT_PUBLIC_MATPENG_2_PCT ?? "2.86%"  },
-  { label: e.NEXT_PUBLIC_MATPENG_3_LABEL ?? "Sektor Industri",  value: Number(e.NEXT_PUBLIC_MATPENG_3_VALUE ?? "4"),    pct: e.NEXT_PUBLIC_MATPENG_3_PCT ?? "0.16%"  },
-  { label: e.NEXT_PUBLIC_MATPENG_4_LABEL ?? "Sektor Lain",      value: Number(e.NEXT_PUBLIC_MATPENG_4_VALUE ?? "290"),  pct: e.NEXT_PUBLIC_MATPENG_4_PCT ?? "11.66%" },
+  { label: process.env.NEXT_PUBLIC_MATPENG_1_LABEL ?? "Pertanian",        value: Number(process.env.NEXT_PUBLIC_MATPENG_1_VALUE ?? "2123"), pct: process.env.NEXT_PUBLIC_MATPENG_1_PCT ?? "85.32%" },
+  { label: process.env.NEXT_PUBLIC_MATPENG_2_LABEL ?? "Jasa/Perdagangan", value: Number(process.env.NEXT_PUBLIC_MATPENG_2_VALUE ?? "71"),   pct: process.env.NEXT_PUBLIC_MATPENG_2_PCT ?? "2.86%"  },
+  { label: process.env.NEXT_PUBLIC_MATPENG_3_LABEL ?? "Sektor Industri",  value: Number(process.env.NEXT_PUBLIC_MATPENG_3_VALUE ?? "4"),    pct: process.env.NEXT_PUBLIC_MATPENG_3_PCT ?? "0.16%"  },
+  { label: process.env.NEXT_PUBLIC_MATPENG_4_LABEL ?? "Sektor Lain",      value: Number(process.env.NEXT_PUBLIC_MATPENG_4_VALUE ?? "290"),  pct: process.env.NEXT_PUBLIC_MATPENG_4_PCT ?? "11.66%" },
 ];
-const MATPENG_TOTAL = e.NEXT_PUBLIC_MATPENG_TOTAL ?? "2.488";
+const MATPENG_TOTAL = process.env.NEXT_PUBLIC_MATPENG_TOTAL ?? "2.488";
 
-const MALE_PCT = Math.min(100, Math.max(0, Number(e.NEXT_PUBLIC_GENDER_MALE_PCT ?? "49")));
+const MALE_PCT = Math.min(100, Math.max(0, Number(process.env.NEXT_PUBLIC_GENDER_MALE_PCT ?? "49.14")));
 
 const CARD = "bg-white border border-[#d1d1d1] rounded-[16px]";
 
@@ -141,9 +139,9 @@ function DonutChart() {
   const maleFraction   = MALE_PCT / 100;
   const femaleFraction = 1 - maleFraction;
 
-  const angle        = maleFraction * 2 * Math.PI;
-  const endX         = parseFloat((90 + 85 * Math.sin(angle)).toFixed(3));
-  const endY         = parseFloat((90 - 85 * Math.cos(angle)).toFixed(3));
+  const angle          = maleFraction * 2 * Math.PI;
+  const endX           = parseFloat((90 + 85 * Math.sin(angle)).toFixed(3));
+  const endY           = parseFloat((90 - 85 * Math.cos(angle)).toFixed(3));
   const maleLargeArc   = maleFraction   > 0.5 ? 1 : 0;
   const femaleLargeArc = femaleFraction > 0.5 ? 1 : 0;
 
@@ -166,7 +164,7 @@ function DonutChart() {
       </div>
       <div className="flex items-center gap-[30px] mt-2">
         <span className="font-sans text-[12px] text-[#37644d]">● Laki-laki {MALE_PCT}%</span>
-        <span className="font-sans text-[12px] text-accent">● Perempuan {100 - MALE_PCT}%</span>
+        <span className="font-sans text-[12px] text-accent">● Perempuan {(100 - MALE_PCT).toFixed(2)}%</span>
       </div>
     </div>
   );

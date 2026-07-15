@@ -6,48 +6,46 @@ const TOTAL_LABEL = "font-sans font-semibold text-[13px] text-primary";
 const TOTAL_VALUE = "font-sans font-semibold text-[13px] text-primary text-right shrink-0";
 const DIVIDER = "h-px bg-divider";
 
-const e = process.env;
-
 const APBDES_2026 = {
   pendapatan: [
-    { label: e.NEXT_PUBLIC_APB26_PEND_1_LABEL ?? "Pendapatan Asli Desa",           amount: e.NEXT_PUBLIC_APB26_PEND_1_AMT ?? "Rp 9.000.000" },
-    { label: e.NEXT_PUBLIC_APB26_PEND_2_LABEL ?? "Dana Desa (DD)",                 amount: e.NEXT_PUBLIC_APB26_PEND_2_AMT ?? "Rp 1.014.740.000" },
-    { label: e.NEXT_PUBLIC_APB26_PEND_3_LABEL ?? "Bagi Hasil Pajak dan Retribusi", amount: e.NEXT_PUBLIC_APB26_PEND_3_AMT ?? "Rp 89.573.382" },
-    { label: e.NEXT_PUBLIC_APB26_PEND_4_LABEL ?? "Alokasi Dana Desa (ADD)",        amount: e.NEXT_PUBLIC_APB26_PEND_4_AMT ?? "Rp 647.884.500" },
-    { label: e.NEXT_PUBLIC_APB26_PEND_5_LABEL ?? "Bunga Bank",                     amount: e.NEXT_PUBLIC_APB26_PEND_5_AMT ?? "Rp 2.500.000" },
+    { label: process.env.NEXT_PUBLIC_APB26_PEND_1_LABEL ?? "Pendapatan Asli Desa",           amount: process.env.NEXT_PUBLIC_APB26_PEND_1_AMT ?? "Rp 9.000.000" },
+    { label: process.env.NEXT_PUBLIC_APB26_PEND_2_LABEL ?? "Dana Desa (DD)",                 amount: process.env.NEXT_PUBLIC_APB26_PEND_2_AMT ?? "Rp 1.014.740.000" },
+    { label: process.env.NEXT_PUBLIC_APB26_PEND_3_LABEL ?? "Bagi Hasil Pajak dan Retribusi", amount: process.env.NEXT_PUBLIC_APB26_PEND_3_AMT ?? "Rp 89.573.382" },
+    { label: process.env.NEXT_PUBLIC_APB26_PEND_4_LABEL ?? "Alokasi Dana Desa (ADD)",        amount: process.env.NEXT_PUBLIC_APB26_PEND_4_AMT ?? "Rp 647.884.500" },
+    { label: process.env.NEXT_PUBLIC_APB26_PEND_5_LABEL ?? "Bunga Bank",                     amount: process.env.NEXT_PUBLIC_APB26_PEND_5_AMT ?? "Rp 2.500.000" },
   ],
-  totalPendapatan: e.NEXT_PUBLIC_APB26_PEND_TOTAL ?? "Rp 1.763.697.882",
+  totalPendapatan: process.env.NEXT_PUBLIC_APB26_PEND_TOTAL ?? "Rp 1.763.697.882",
   belanja: [
-    { label: e.NEXT_PUBLIC_APB26_BEL_1_LABEL ?? "Penyelenggaraan Pemerintahan", amount: e.NEXT_PUBLIC_APB26_BEL_1_AMT ?? "Rp 781.468.128" },
-    { label: e.NEXT_PUBLIC_APB26_BEL_2_LABEL ?? "Pelaksanaan Pembangunan",      amount: e.NEXT_PUBLIC_APB26_BEL_2_AMT ?? "Rp 674.055.000" },
-    { label: e.NEXT_PUBLIC_APB26_BEL_3_LABEL ?? "Pembinaan Kemasyarakatan",     amount: e.NEXT_PUBLIC_APB26_BEL_3_AMT ?? "Rp 135.764.000" },
-    { label: e.NEXT_PUBLIC_APB26_BEL_4_LABEL ?? "Pemberdayaan Kemasyarakatan",  amount: e.NEXT_PUBLIC_APB26_BEL_4_AMT ?? "Rp 77.730.000" },
-    { label: e.NEXT_PUBLIC_APB26_BEL_5_LABEL ?? "Penanggulangan Bencana",       amount: e.NEXT_PUBLIC_APB26_BEL_5_AMT ?? "Rp 201.815.510" },
+    { label: process.env.NEXT_PUBLIC_APB26_BEL_1_LABEL ?? "Penyelenggaraan Pemerintahan", amount: process.env.NEXT_PUBLIC_APB26_BEL_1_AMT ?? "Rp 781.468.128" },
+    { label: process.env.NEXT_PUBLIC_APB26_BEL_2_LABEL ?? "Pelaksanaan Pembangunan",      amount: process.env.NEXT_PUBLIC_APB26_BEL_2_AMT ?? "Rp 674.055.000" },
+    { label: process.env.NEXT_PUBLIC_APB26_BEL_3_LABEL ?? "Pembinaan Kemasyarakatan",     amount: process.env.NEXT_PUBLIC_APB26_BEL_3_AMT ?? "Rp 135.764.000" },
+    { label: process.env.NEXT_PUBLIC_APB26_BEL_4_LABEL ?? "Pemberdayaan Kemasyarakatan",  amount: process.env.NEXT_PUBLIC_APB26_BEL_4_AMT ?? "Rp 77.730.000" },
+    { label: process.env.NEXT_PUBLIC_APB26_BEL_5_LABEL ?? "Penanggulangan Bencana",       amount: process.env.NEXT_PUBLIC_APB26_BEL_5_AMT ?? "Rp 201.815.510" },
   ],
-  totalBelanja: e.NEXT_PUBLIC_APB26_BEL_TOTAL ?? "Rp 1.870.832.638",
-  surplus:      e.NEXT_PUBLIC_APB26_SURPLUS    ?? "Rp 107.134.756",
-  silpa:        e.NEXT_PUBLIC_APB26_SILPA      ?? "Rp 107.234.756",
+  totalBelanja: process.env.NEXT_PUBLIC_APB26_BEL_TOTAL ?? "Rp 1.870.832.638",
+  surplus:      process.env.NEXT_PUBLIC_APB26_SURPLUS    ?? "Rp 107.134.756",
+  silpa:        process.env.NEXT_PUBLIC_APB26_SILPA      ?? "Rp 107.234.756",
 };
 
 const REALISASI_2025 = {
   pendapatan: [
-    { label: e.NEXT_PUBLIC_REAL25_PEND_1_LABEL ?? "Pendapatan Asli Desa",           realisasi: e.NEXT_PUBLIC_REAL25_PEND_1_AMT ?? "Rp 9.000.000" },
-    { label: e.NEXT_PUBLIC_REAL25_PEND_2_LABEL ?? "Dana Desa (DD)",                 realisasi: e.NEXT_PUBLIC_REAL25_PEND_2_AMT ?? "Rp 1.014.740.000" },
-    { label: e.NEXT_PUBLIC_REAL25_PEND_3_LABEL ?? "Bagi Hasil Pajak dan Retribusi", realisasi: e.NEXT_PUBLIC_REAL25_PEND_3_AMT ?? "Rp 89.573.382" },
-    { label: e.NEXT_PUBLIC_REAL25_PEND_4_LABEL ?? "Alokasi Dana Desa (ADD)",        realisasi: e.NEXT_PUBLIC_REAL25_PEND_4_AMT ?? "Rp 647.884.500" },
-    { label: e.NEXT_PUBLIC_REAL25_PEND_5_LABEL ?? "Pendapatan Lain-Lain",           realisasi: e.NEXT_PUBLIC_REAL25_PEND_5_AMT ?? "Rp 3.281.245" },
+    { label: process.env.NEXT_PUBLIC_REAL25_PEND_1_LABEL ?? "Pendapatan Asli Desa",           realisasi: process.env.NEXT_PUBLIC_REAL25_PEND_1_AMT ?? "Rp 9.000.000" },
+    { label: process.env.NEXT_PUBLIC_REAL25_PEND_2_LABEL ?? "Dana Desa (DD)",                 realisasi: process.env.NEXT_PUBLIC_REAL25_PEND_2_AMT ?? "Rp 1.014.740.000" },
+    { label: process.env.NEXT_PUBLIC_REAL25_PEND_3_LABEL ?? "Bagi Hasil Pajak dan Retribusi", realisasi: process.env.NEXT_PUBLIC_REAL25_PEND_3_AMT ?? "Rp 89.573.382" },
+    { label: process.env.NEXT_PUBLIC_REAL25_PEND_4_LABEL ?? "Alokasi Dana Desa (ADD)",        realisasi: process.env.NEXT_PUBLIC_REAL25_PEND_4_AMT ?? "Rp 647.884.500" },
+    { label: process.env.NEXT_PUBLIC_REAL25_PEND_5_LABEL ?? "Pendapatan Lain-Lain",           realisasi: process.env.NEXT_PUBLIC_REAL25_PEND_5_AMT ?? "Rp 3.281.245" },
   ],
-  totalPendapatan: e.NEXT_PUBLIC_REAL25_PEND_TOTAL ?? "Rp 1.764.479.127",
+  totalPendapatan: process.env.NEXT_PUBLIC_REAL25_PEND_TOTAL ?? "Rp 1.764.479.127",
   belanja: [
-    { label: e.NEXT_PUBLIC_REAL25_BEL_1_LABEL ?? "Penyelenggaraan Pemerintahan",  realisasi: e.NEXT_PUBLIC_REAL25_BEL_1_AMT ?? "Rp 745.975.129" },
-    { label: e.NEXT_PUBLIC_REAL25_BEL_2_LABEL ?? "Pelaksanaan Pembangunan",       realisasi: e.NEXT_PUBLIC_REAL25_BEL_2_AMT ?? "Rp 499.697.600" },
-    { label: e.NEXT_PUBLIC_REAL25_BEL_3_LABEL ?? "Pembinaan Kemasyarakatan",      realisasi: e.NEXT_PUBLIC_REAL25_BEL_3_AMT ?? "Rp 93.711.346" },
-    { label: e.NEXT_PUBLIC_REAL25_BEL_4_LABEL ?? "Pemberdayaan Kemasyarakatan",   realisasi: e.NEXT_PUBLIC_REAL25_BEL_4_AMT ?? "Rp 82.400.000" },
-    { label: e.NEXT_PUBLIC_REAL25_BEL_5_LABEL ?? "Penanggulangan Bencana Darurat", realisasi: e.NEXT_PUBLIC_REAL25_BEL_5_AMT ?? "Rp 126.000.000" },
+    { label: process.env.NEXT_PUBLIC_REAL25_BEL_1_LABEL ?? "Penyelenggaraan Pemerintahan",   realisasi: process.env.NEXT_PUBLIC_REAL25_BEL_1_AMT ?? "Rp 745.975.129" },
+    { label: process.env.NEXT_PUBLIC_REAL25_BEL_2_LABEL ?? "Pelaksanaan Pembangunan",        realisasi: process.env.NEXT_PUBLIC_REAL25_BEL_2_AMT ?? "Rp 499.697.600" },
+    { label: process.env.NEXT_PUBLIC_REAL25_BEL_3_LABEL ?? "Pembinaan Kemasyarakatan",       realisasi: process.env.NEXT_PUBLIC_REAL25_BEL_3_AMT ?? "Rp 93.711.346" },
+    { label: process.env.NEXT_PUBLIC_REAL25_BEL_4_LABEL ?? "Pemberdayaan Kemasyarakatan",    realisasi: process.env.NEXT_PUBLIC_REAL25_BEL_4_AMT ?? "Rp 82.400.000" },
+    { label: process.env.NEXT_PUBLIC_REAL25_BEL_5_LABEL ?? "Penanggulangan Bencana Darurat", realisasi: process.env.NEXT_PUBLIC_REAL25_BEL_5_AMT ?? "Rp 126.000.000" },
   ],
-  totalBelanja: e.NEXT_PUBLIC_REAL25_BEL_TOTAL ?? "Rp 1.547.784.075",
-  surplus:      e.NEXT_PUBLIC_REAL25_SURPLUS    ?? "Rp 216.695.052",
-  silpa:        e.NEXT_PUBLIC_REAL25_SILPA      ?? "Rp 108.311.878",
+  totalBelanja: process.env.NEXT_PUBLIC_REAL25_BEL_TOTAL ?? "Rp 1.547.784.075",
+  surplus:      process.env.NEXT_PUBLIC_REAL25_SURPLUS    ?? "Rp 216.695.052",
+  silpa:        process.env.NEXT_PUBLIC_REAL25_SILPA      ?? "Rp 108.311.878",
 };
 
 function Row({ label, value }: { label: string; value: string }) {
