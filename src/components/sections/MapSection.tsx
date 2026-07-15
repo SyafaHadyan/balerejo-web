@@ -12,12 +12,14 @@ export default function MapSection() {
         </p>
       </div>
 
-      <div className="relative w-full max-w-[1000px] px-6" style={{ aspectRatio: "409 / 508" }}>
+      <div className="w-full max-w-[1000px] px-6">
         <Image
-          src="/images/map.png"
+          src="/images/map.jpeg"
           alt="Peta Digital Desa Balerejo"
-          fill
-          className="object-cover"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
         />
       </div>
     </section>

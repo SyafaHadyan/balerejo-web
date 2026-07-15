@@ -3,20 +3,22 @@ const BLOCKS = [
     id: "sejarah",
     eyebrow: "SEJARAH SINGKAT",
     heading: "Sejarah Singkat",
-    body: `Nama Balerejo dipercaya berasal dari "bale" (tempat berkumpul) dan "rejo" (ramai, makmur) - cita-cita warga sejak desa dirintis puluhan tahun lalu.`,
+    body: process.env.NEXT_PUBLIC_SEJARAH_BODY
+      ?? `Nama Balerejo dipercaya berasal dari "bale" (tempat berkumpul) dan "rejo" (ramai, makmur) - cita-cita warga sejak desa dirintis puluhan tahun lalu.`,
   },
   {
     id: "visi-misi",
     eyebrow: "VISI & MISI",
     heading: "Visi & Misi",
-    body: "Visi: mewujudkan desa mandiri berbasis pertanian dan UMKM. Misi mencakup penguatan ekonomi lokal, tata kelola desa yang transparan, dan pelestarian lingkungan.",
+    body: process.env.NEXT_PUBLIC_VISI_MISI_BODY
+      ?? "Visi: mewujudkan desa mandiri berbasis pertanian dan UMKM. Misi mencakup penguatan ekonomi lokal, tata kelola desa yang transparan, dan pelestarian lingkungan.",
   },
-] as const;
+];
 
 export default function ProfileSection() {
   return (
     <section
-      className="bg-surface flex flex-col md:flex-row gap-[50px] items-start md:items-center justify-center px-[30px] py-[50px]"
+      className="bg-surface flex flex-col md:flex-row gap-[50px] items-start justify-center px-[30px] py-[50px]"
       aria-label="Profil desa"
     >
       {BLOCKS.map(({ id, eyebrow, heading, body }) => (
