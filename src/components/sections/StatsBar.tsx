@@ -1,12 +1,11 @@
-const STATS = [
-  { value: process.env.NEXT_PUBLIC_STAT_PENDUDUK   ?? "±2.500",      label: "Jiwa Penduduk" },
-  { value: process.env.NEXT_PUBLIC_STAT_KK         ?? "±800",        label: "Kepala Keluarga" },
-  { value: process.env.NEXT_PUBLIC_STAT_DUSUN      ?? "4",           label: "Dusun" },
-  { value: process.env.NEXT_PUBLIC_STAT_KECAMATAN  ?? "Panggungrejo", label: "Kecamatan" },
-  { value: process.env.NEXT_PUBLIC_STAT_KABUPATEN  ?? "Blitar",      label: "Kabupaten" },
-];
-
 export default function StatsBar() {
+  const STATS = [
+    { value: process.env.NEXT_PUBLIC_STAT_PENDUDUK   ?? "±2.500",       label: "Jiwa Penduduk" },
+    { value: process.env.NEXT_PUBLIC_STAT_KK         ?? "±800",         label: "Kepala Keluarga" },
+    { value: process.env.NEXT_PUBLIC_STAT_DUSUN      ?? "4",            label: "Dusun" },
+    { value: process.env.NEXT_PUBLIC_STAT_KECAMATAN  ?? "Panggungrejo", label: "Kecamatan" },
+    { value: process.env.NEXT_PUBLIC_STAT_KABUPATEN  ?? "Blitar",       label: "Kabupaten" },
+  ];
   return (
     <div className="bg-surface" aria-label="Statistik desa">
 

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import InfografisSection from "@/components/sections/InfografisSection";
-import APBDesSection from "@/components/sections/APBDesSection";
+import InfografisTabs from "@/components/InfografisTabs";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -15,8 +14,7 @@ export default function InfografisPage() {
       <Navbar activePage="infografis" />
       <main>
         <PageHeader eyebrow="DATA DESA" heading="Infografis" />
-        <InfografisSection />
-        <APBDesSection />
+        <InfografisTabs />
       </main>
       <Footer />
     </>
