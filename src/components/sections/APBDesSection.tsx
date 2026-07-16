@@ -1,9 +1,9 @@
 const CARD = "bg-white border border-[#d1d1d1] rounded-[16px] flex-1 p-6 flex flex-col gap-4";
-const SECTION_LABEL = "font-sans font-semibold text-[11px] tracking-[1px] uppercase text-accent";
-const ROW_LABEL = "font-sans text-[13px] text-primary";
-const ROW_VALUE = "font-sans font-semibold text-[13px] text-[#37644d] text-right shrink-0";
-const TOTAL_LABEL = "font-sans font-semibold text-[13px] text-primary";
-const TOTAL_VALUE = "font-sans font-semibold text-[13px] text-primary text-right shrink-0";
+const SECTION_LABEL = "font-sans font-semibold text-[12px] tracking-[1px] uppercase text-accent";
+const ROW_LABEL = "font-sans text-[14px] text-primary";
+const ROW_VALUE = "font-sans font-semibold text-[14px] text-[#37644d] text-right shrink-0";
+const TOTAL_LABEL = "font-sans font-semibold text-[14px] text-primary";
+const TOTAL_VALUE = "font-sans font-semibold text-[14px] text-primary text-right shrink-0";
 const DIVIDER = "h-px bg-divider";
 
 const APBDES_2026 = {
@@ -69,10 +69,10 @@ function TotalRow({ label, value }: { label: string; value: string }) {
 function Anggaran2026Card() {
   return (
     <div className={CARD}>
-      <p className="font-heading font-bold text-[20px] leading-[1.3] text-primary">
+      <p className="font-heading font-bold text-[22px] leading-[1.3] text-primary">
         APBDes 2026
       </p>
-      <p className="font-sans text-[13px] text-muted -mt-2">Anggaran Pendapatan dan Belanja Desa</p>
+      <p className="font-sans text-[14px] text-muted -mt-2">Anggaran Pendapatan dan Belanja Desa</p>
 
       <div className={DIVIDER} />
 
@@ -109,10 +109,10 @@ function Anggaran2026Card() {
 function Realisasi2025Card() {
   return (
     <div className={CARD}>
-      <p className="font-heading font-bold text-[20px] leading-[1.3] text-primary">
+      <p className="font-heading font-bold text-[22px] leading-[1.3] text-primary">
         Realisasi APBDes 2025
       </p>
-      <p className="font-sans text-[13px] text-muted -mt-2">Realisasi Anggaran Pendapatan dan Belanja Desa</p>
+      <p className="font-sans text-[14px] text-muted -mt-2">Realisasi Anggaran Pendapatan dan Belanja Desa</p>
 
       <div className={DIVIDER} />
 

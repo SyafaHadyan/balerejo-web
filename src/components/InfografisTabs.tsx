@@ -3,6 +3,7 @@
 import { useState } from "react";
 import InfografisSection from "@/components/sections/InfografisSection";
 import APBDesSection from "@/components/sections/APBDesSection";
+import PotensiSection from "@/components/sections/PotensiSection";
 
 function IconPenduduk({ active }: { active: boolean }) {
   const color = active ? "#1D392B" : "#9ca3af";
@@ -27,9 +28,22 @@ function IconAPBDes({ active }: { active: boolean }) {
   );
 }
 
+function IconPotensi({ active }: { active: boolean }) {
+  const color = active ? "#1D392B" : "#9ca3af";
+  return (
+    <svg width="36" height="36" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M14 25V13" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M14 15c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5z" fill={color} />
+      <path d="M14 18c0-4-3-6.5-7-6.5 0 4 3 6.5 7 6.5z" fill={color} opacity="0.6" />
+      <path d="M8 25h12" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const TABS = [
-  { id: "penduduk", label: "Penduduk", Icon: IconPenduduk },
-  { id: "apbdes",   label: "APBDes",   Icon: IconAPBDes   },
+  { id: "penduduk", label: "Penduduk",    Icon: IconPenduduk },
+  { id: "potensi",  label: "Potensi Desa", Icon: IconPotensi  },
+  { id: "apbdes",   label: "APBDes",      Icon: IconAPBDes   },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
@@ -53,7 +67,7 @@ export default function InfografisTabs() {
                 ].join(" ")}
               >
                 <Icon active={isActive} />
-                <span className={`font-sans text-[15px] leading-none ${isActive ? "font-semibold" : ""}`}>
+                <span className={`font-sans text-[17px] leading-none ${isActive ? "font-semibold" : ""}`}>
                   {label}
                 </span>
                 {isActive && (
@@ -66,6 +80,7 @@ export default function InfografisTabs() {
       </div>
 
       {active === "penduduk" && <InfografisSection />}
+      {active === "potensi"  && <PotensiSection />}
       {active === "apbdes"   && <APBDesSection />}
     </div>
   );
