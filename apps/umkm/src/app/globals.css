@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1D392B;
+  --color-accent: #DCBe82;
+  --color-surface: #F8F7F4;
+  --color-muted: #616660;
+  --color-divider: #E1DFD9;
+  --font-sans: var(--font-source-sans, "Source Sans 3", system-ui, sans-serif);
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-playfair, "Playfair Display", Georgia, serif);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-source-sans, "Source Sans 3", system-ui, sans-serif);
+    background-color: #fff;
+    color: #1D392B;
+  }
+}
