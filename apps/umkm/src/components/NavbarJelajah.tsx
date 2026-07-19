@@ -2,15 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useMainSiteUrl } from "@/lib/useMainSiteUrl";
 
 const NAV_LINKS = [
   { href: "/", label: "UMKM", id: "umkm" },
   { href: "/wisata", label: "Wisata", id: "wisata" },
   { href: "/peta-digital", label: "Peta Digital", id: "peta-digital" },
-  { href: process.env.NEXT_PUBLIC_MAIN_SITE_URL ?? "https://balerejo.desa.id", label: "Situs Utama Desa", id: "situs-utama" },
 ] as const;
 
-type ActivePage = (typeof NAV_LINKS)[number]["id"];
+type ActivePage = (typeof NAV_LINKS)[number]["id"] | "situs-utama";
 
 interface NavbarJelajahProps {
   activePage?: ActivePage;
@@ -20,6 +20,7 @@ export default function NavbarJelajah({ activePage }: NavbarJelajahProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const mainSiteUrl = useMainSiteUrl();
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -44,6 +45,9 @@ export default function NavbarJelajah({ activePage }: NavbarJelajahProps) {
     return () => document.removeEventListener("keydown", handleKey);
   }, []);
 
+  const linkClass =
+    "font-sans font-semibold text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-200";
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-primary flex items-center py-[18px]">
@@ -63,12 +67,22 @@ export default function NavbarJelajah({ activePage }: NavbarJelajahProps) {
                   <Link
                     href={href}
                     aria-current={activePage === id ? "page" : undefined}
-                    className="font-sans font-semibold text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-200"
+                    className={linkClass}
                   >
                     {label}
                   </Link>
                 </li>
               ))}
+              {/* "Situs Utama Desa" — resolves base domain at runtime */}
+              <li key="situs-utama">
+                <a
+                  href={mainSiteUrl || "#"}
+                  aria-current={activePage === "situs-utama" ? "page" : undefined}
+                  className={linkClass}
+                >
+                  Situs Utama Desa
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -130,6 +144,15 @@ export default function NavbarJelajah({ activePage }: NavbarJelajahProps) {
                 </Link>
               </li>
             ))}
+            <li key="situs-utama">
+              <a
+                href={mainSiteUrl || "#"}
+                onClick={() => setIsOpen(false)}
+                className="block px-8 py-4 font-sans font-semibold text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-150"
+              >
+                Situs Utama Desa
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

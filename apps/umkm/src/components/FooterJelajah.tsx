@@ -1,16 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { useMainSiteUrl } from "@/lib/useMainSiteUrl";
 
 const NAV_LINKS = [
   { href: "/", label: "UMKM" },
   { href: "/wisata", label: "Wisata" },
   { href: "/peta-digital", label: "Peta Digital" },
-  { href: process.env.NEXT_PUBLIC_MAIN_SITE_URL ?? "https://balerejo.desa.id", label: "Situs Utama Desa" },
 ] as const;
 
 export default function FooterJelajah() {
   const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+62 812-3456-7891";
   const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hi@balerejo.desa.id";
   const telHref = `tel:${phone.replace(/[\s]/g, "")}`;
+  const mainSiteUrl = useMainSiteUrl();
 
   return (
     <footer className="bg-primary p-5 flex flex-col gap-3 rounded-t-[8px]" aria-label="Footer">
@@ -37,6 +40,15 @@ export default function FooterJelajah() {
                 </Link>
               </li>
             ))}
+            {/* "Situs Utama Desa" — resolves base domain at runtime */}
+            <li key="situs-utama">
+              <a
+                href={mainSiteUrl || "#"}
+                className="font-sans text-[13px] text-[#bfbfbf] hover:text-white transition-colors duration-200"
+              >
+                Situs Utama Desa
+              </a>
+            </li>
           </ul>
         </div>
 
