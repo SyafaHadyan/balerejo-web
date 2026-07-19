@@ -9,6 +9,9 @@ node_modules/
 *.tsbuildinfo
 next-env.d.ts
 
+# Turborepo
+.turbo/
+
 # Env files — never commit secrets
 .env
 .env.local
