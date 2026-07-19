@@ -28,7 +28,7 @@ export default function UmkmMapSection() {
         </div>
 
         {/* map */}
-        <div className="h-[400px] md:h-[480px] w-full rounded-[16px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+        <div className="aspect-video w-full rounded-[16px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
           <UmkmMap />
         </div>
       </div>
