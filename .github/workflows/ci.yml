@@ -27,8 +27,11 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Type check
-        run: npx tsc --noEmit
+      - name: Type check — main
+        run: npx tsc --noEmit -p apps/main/tsconfig.json
+
+      - name: Type check — umkm
+        run: npx tsc --noEmit -p apps/umkm/tsconfig.json
 
       - name: Lint
         run: npm run lint
