@@ -55,11 +55,11 @@ function GeografisCard() {
         Kondisi Geografis Desa
       </h3>
       <p className="font-sans text-[15px] leading-[1.7] text-muted">
-        Secara geografis Desa Balerejo terletak pada posisi 8°256&apos;-25°35&apos; Lintang Selatan
-        dan 112°29&apos;-971°27&apos; Bujur Timur. Topografi desa ini berupa dataran tinggi dengan
-        ketinggian sekitar 300 m di atas permukaan air laut. Letak Desa Balerejo berada
-        di antara 3 desa lain yang masih termasuk dalam wilayah Kecamatan Binangun dan
-        Kecamatan Wates, Kabupaten Blitar.
+        Secara geografis Desa Balerejo terletak pada posisi 8°15&apos;–8°20&apos; Lintang Selatan
+        dan 112°16&apos;–112°19&apos; Bujur Timur. Luas wilayah desa mencapai 1.720,93 hektar (17,21 km²).
+        Desa Balerejo berada dalam wilayah Kecamatan Panggungrejo, Kabupaten Blitar,
+        Provinsi Jawa Timur, berbatasan dengan desa-desa yang termasuk dalam
+        Kecamatan Binangun dan Kecamatan Wates di sisi timur.
       </p>
 
       <div className="h-px bg-divider" />
@@ -95,10 +95,10 @@ export default function MapSection() {
         </p>
       </div>
 
-      <div className="w-full max-w-[1200px] px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <div className="w-full max-w-[520px] mx-auto lg:max-w-none">
+      <div className="w-full max-w-[1200px] px-6 flex flex-col gap-8">
+        <div className="w-full">
           <Image
-            src="/images/map.jpeg"
+            src="/images/map.png"
             alt="Peta Digital Desa Balerejo"
             width={0}
             height={0}
