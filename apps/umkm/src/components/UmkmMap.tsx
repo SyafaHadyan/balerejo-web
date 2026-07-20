@@ -21,6 +21,7 @@ export default function UmkmMap() {
     <Map
       center={CENTER}
       zoom={12}
+      styles={{ light: "/data/osm-style.json", dark: "/data/osm-style.json" }}
       className="h-full w-full rounded-[16px]"
     >
       <MapGeoJSON
