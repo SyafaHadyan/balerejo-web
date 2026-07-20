@@ -157,4 +157,4 @@ Refer to `apps/main/.env.example` and `apps/umkm/.env.example` for the complete 
 
 ## License
 
-© 2026 Pemerintah Desa Balerejo · MMD FILKOM Universitas Brawijaya
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
