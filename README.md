@@ -80,7 +80,7 @@ cd apps/umkm && npm run dev
 
 ## Project Structure
 
-```
+```txt
 balerejo-web/
 ├── apps/
 │   ├── main/                   # balerejo.desa.id
