@@ -6,28 +6,30 @@ import React from "react";
    (mis. Jagung, Tomat, Alpukat, Pisang, Kopi, Pinang, Tembakau) tidak
    disertakan karena tidak ada angka luas tanam/hasil yang bisa ditampilkan. */
 
+const e = process.env;
+
 const TANAMAN_PANGAN = [
-  { name: "Kacang Kedelai", luas: "567 Ha", hasil: "5 Ton/Ha"   },
-  { name: "Kacang Tanah",   luas: "502 Ha", hasil: "3 Ton/Ha"   },
-  { name: "Kubis",          luas: "352 Ha", hasil: "6 Ton/Ha"   },
-  { name: "Jagung",         luas: "120 Ha", hasil: "4 Ton/Ha"   },
-  { name: "Singkong",       luas: "45 Ha",  hasil: "12 Ton/Ha"  },
-  { name: "Cabe",           luas: "52 Ha",  hasil: "4 Ton/Ha"   },
-  { name: "Bawang Merah",   luas: "28 Ha",  hasil: "6 Ton/Ha"   },
-  { name: "Tomat",          luas: "22 Ha",  hasil: "8 Ton/Ha"   },
-  { name: "Padi",           luas: "35 Ha",  hasil: "1,4 Ton/Ha" },
+  { name: e.NEXT_PUBLIC_TANPANG_1_NAME ?? "Kacang Kedelai", luas: e.NEXT_PUBLIC_TANPANG_1_LUAS ?? "567 Ha", hasil: e.NEXT_PUBLIC_TANPANG_1_HASIL ?? "5 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_2_NAME ?? "Kacang Tanah",   luas: e.NEXT_PUBLIC_TANPANG_2_LUAS ?? "502 Ha", hasil: e.NEXT_PUBLIC_TANPANG_2_HASIL ?? "3 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_3_NAME ?? "Kubis",          luas: e.NEXT_PUBLIC_TANPANG_3_LUAS ?? "352 Ha", hasil: e.NEXT_PUBLIC_TANPANG_3_HASIL ?? "6 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_4_NAME ?? "Jagung",         luas: e.NEXT_PUBLIC_TANPANG_4_LUAS ?? "120 Ha", hasil: e.NEXT_PUBLIC_TANPANG_4_HASIL ?? "4 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_5_NAME ?? "Singkong",       luas: e.NEXT_PUBLIC_TANPANG_5_LUAS ?? "45 Ha",  hasil: e.NEXT_PUBLIC_TANPANG_5_HASIL ?? "12 Ton/Ha"  },
+  { name: e.NEXT_PUBLIC_TANPANG_6_NAME ?? "Cabe",           luas: e.NEXT_PUBLIC_TANPANG_6_LUAS ?? "52 Ha",  hasil: e.NEXT_PUBLIC_TANPANG_6_HASIL ?? "4 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_7_NAME ?? "Bawang Merah",   luas: e.NEXT_PUBLIC_TANPANG_7_LUAS ?? "28 Ha",  hasil: e.NEXT_PUBLIC_TANPANG_7_HASIL ?? "6 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_8_NAME ?? "Tomat",          luas: e.NEXT_PUBLIC_TANPANG_8_LUAS ?? "22 Ha",  hasil: e.NEXT_PUBLIC_TANPANG_8_HASIL ?? "8 Ton/Ha"   },
+  { name: e.NEXT_PUBLIC_TANPANG_9_NAME ?? "Padi",           luas: e.NEXT_PUBLIC_TANPANG_9_LUAS ?? "35 Ha",  hasil: e.NEXT_PUBLIC_TANPANG_9_HASIL ?? "1,4 Ton/Ha" },
 ];
 
 const BUAH_BUAHAN = [
-  { name: "Mangga", luas: "20 Ha", hasil: "5 Ton/Ha"  },
-  { name: "Melon",  luas: "15 Ha", hasil: "8 Ton/Ha"  },
-  { name: "Pepaya", luas: "10 Ha", hasil: "10 Ton/Ha" },
-  { name: "Durian", luas: "5 Ha",  hasil: "5 Ton/Ha"  },
+  { name: e.NEXT_PUBLIC_BUAH_1_NAME ?? "Mangga", luas: e.NEXT_PUBLIC_BUAH_1_LUAS ?? "20 Ha", hasil: e.NEXT_PUBLIC_BUAH_1_HASIL ?? "5 Ton/Ha"  },
+  { name: e.NEXT_PUBLIC_BUAH_2_NAME ?? "Melon",  luas: e.NEXT_PUBLIC_BUAH_2_LUAS ?? "15 Ha", hasil: e.NEXT_PUBLIC_BUAH_2_HASIL ?? "8 Ton/Ha"  },
+  { name: e.NEXT_PUBLIC_BUAH_3_NAME ?? "Pepaya", luas: e.NEXT_PUBLIC_BUAH_3_LUAS ?? "10 Ha", hasil: e.NEXT_PUBLIC_BUAH_3_HASIL ?? "10 Ton/Ha" },
+  { name: e.NEXT_PUBLIC_BUAH_4_NAME ?? "Durian", luas: e.NEXT_PUBLIC_BUAH_4_LUAS ?? "5 Ha",  hasil: e.NEXT_PUBLIC_BUAH_4_HASIL ?? "5 Ton/Ha"  },
 ];
 
 const PERKEBUNAN_RAKYAT = [
-  { name: "Kelapa", luas: "30 Ha", hasil: "15 Ton/Ha" },
-  { name: "Tebu",   luas: "20 Ha", hasil: "1,5 Ton/Ha" },
+  { name: e.NEXT_PUBLIC_KEBUN_1_NAME ?? "Kelapa", luas: e.NEXT_PUBLIC_KEBUN_1_LUAS ?? "30 Ha", hasil: e.NEXT_PUBLIC_KEBUN_1_HASIL ?? "15 Ton/Ha"  },
+  { name: e.NEXT_PUBLIC_KEBUN_2_NAME ?? "Tebu",   luas: e.NEXT_PUBLIC_KEBUN_2_LUAS ?? "20 Ha", hasil: e.NEXT_PUBLIC_KEBUN_2_HASIL ?? "1,5 Ton/Ha" },
 ];
 
 function sumHa(data: { luas: string }[]) {
