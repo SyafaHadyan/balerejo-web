@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 
 export default function PetaDigitalPage() {
   return (
-    <>
+    <div className="h-screen overflow-hidden flex flex-col">
       <NavbarJelajah activePage="peta-digital" />
-      <main>
+      <main className="flex-1 overflow-hidden">
         <UmkmMapSection />
       </main>
-    </>
+    </div>
   );
 }

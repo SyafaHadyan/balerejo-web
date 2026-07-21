@@ -3,8 +3,10 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { PRODUCTS, type Product } from "@/data/umkm";
+
+const SIDEBAR_WIDTH = 360;
 
 /* MapLibre requires browser APIs — disable SSR */
 const UmkmMap = dynamic(() => import("@/components/UmkmMap"), {
@@ -114,7 +116,12 @@ function ProductCard({
 export default function UmkmMapSection() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  /* Default closed on mobile — sidebar at 360px covers most of a ~390px screen */
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) setIsSidebarOpen(false);
+  }, []);
 
   const filtered = useMemo(() => {
     if (!search.trim()) return PRODUCTS;
@@ -129,13 +136,13 @@ export default function UmkmMapSection() {
 
   function handleMarkerClick(slug: string) {
     setSelectedSlug((prev) => (prev === slug ? null : slug));
+    /* On mobile, auto-close sidebar so the marker + popup are fully visible */
+    if (window.innerWidth < 768) setIsSidebarOpen(false);
   }
 
   return (
-    /* Full height: navbar is ~65px (py-[18px] + 29px line-height) */
     <section
-      className="relative overflow-hidden"
-      style={{ height: "calc(100vh - 65px)" }}
+      className="relative overflow-hidden h-full"
       aria-label="Peta digital UMKM"
     >
       {/* ── Sidebar — slides over the map, no layout shift ── */}
@@ -218,6 +225,8 @@ export default function UmkmMapSection() {
           selectedSlug={selectedSlug}
           onMarkerClick={handleMarkerClick}
           onPopupClose={() => setSelectedSlug(null)}
+          sidebarOpen={isSidebarOpen}
+          sidebarWidth={SIDEBAR_WIDTH}
         />
 
         {/* Toggle button — slides right when sidebar opens */}
