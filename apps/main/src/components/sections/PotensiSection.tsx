@@ -7,21 +7,27 @@ import React from "react";
    disertakan karena tidak ada angka luas tanam/hasil yang bisa ditampilkan. */
 
 const TANAMAN_PANGAN = [
-  { name: "Kacang Kedelai", luas: "567 Ha", hasil: "5 Ton/Ha" },
-  { name: "Kacang Tanah",   luas: "502 Ha", hasil: "3 Ton/Ha" },
-  { name: "Kubis",          luas: "352 Ha", hasil: "6 Ton/Ha" },
-  { name: "Cabe",           luas: "52 Ha",  hasil: "4 Ton/Ha" },
-  { name: "Padi",           luas: "35 Ha",  hasil: "1,4 Ton/Ha" },
+  { name: process.env.NEXT_PUBLIC_TANPANG_1_NAME ?? "Kacang Kedelai", luas: process.env.NEXT_PUBLIC_TANPANG_1_LUAS ?? "567 Ha", hasil: process.env.NEXT_PUBLIC_TANPANG_1_HASIL ?? "5 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_2_NAME ?? "Kacang Tanah",   luas: process.env.NEXT_PUBLIC_TANPANG_2_LUAS ?? "502 Ha", hasil: process.env.NEXT_PUBLIC_TANPANG_2_HASIL ?? "3 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_3_NAME ?? "Kubis",          luas: process.env.NEXT_PUBLIC_TANPANG_3_LUAS ?? "352 Ha", hasil: process.env.NEXT_PUBLIC_TANPANG_3_HASIL ?? "6 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_4_NAME ?? "Jagung",         luas: process.env.NEXT_PUBLIC_TANPANG_4_LUAS ?? "120 Ha", hasil: process.env.NEXT_PUBLIC_TANPANG_4_HASIL ?? "4 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_5_NAME ?? "Singkong",       luas: process.env.NEXT_PUBLIC_TANPANG_5_LUAS ?? "45 Ha",  hasil: process.env.NEXT_PUBLIC_TANPANG_5_HASIL ?? "12 Ton/Ha"  },
+  { name: process.env.NEXT_PUBLIC_TANPANG_6_NAME ?? "Cabe",           luas: process.env.NEXT_PUBLIC_TANPANG_6_LUAS ?? "52 Ha",  hasil: process.env.NEXT_PUBLIC_TANPANG_6_HASIL ?? "4 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_7_NAME ?? "Bawang Merah",   luas: process.env.NEXT_PUBLIC_TANPANG_7_LUAS ?? "28 Ha",  hasil: process.env.NEXT_PUBLIC_TANPANG_7_HASIL ?? "6 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_8_NAME ?? "Tomat",          luas: process.env.NEXT_PUBLIC_TANPANG_8_LUAS ?? "22 Ha",  hasil: process.env.NEXT_PUBLIC_TANPANG_8_HASIL ?? "8 Ton/Ha"   },
+  { name: process.env.NEXT_PUBLIC_TANPANG_9_NAME ?? "Padi",           luas: process.env.NEXT_PUBLIC_TANPANG_9_LUAS ?? "35 Ha",  hasil: process.env.NEXT_PUBLIC_TANPANG_9_HASIL ?? "1,4 Ton/Ha" },
 ];
 
 const BUAH_BUAHAN = [
-  { name: "Mangga", luas: "20 Ha", hasil: "5 Ton/Ha" },
-  { name: "Durian", luas: "5 Ha",  hasil: "5 Ton/Ha" },
+  { name: process.env.NEXT_PUBLIC_BUAH_1_NAME ?? "Mangga", luas: process.env.NEXT_PUBLIC_BUAH_1_LUAS ?? "20 Ha", hasil: process.env.NEXT_PUBLIC_BUAH_1_HASIL ?? "5 Ton/Ha"  },
+  { name: process.env.NEXT_PUBLIC_BUAH_2_NAME ?? "Melon",  luas: process.env.NEXT_PUBLIC_BUAH_2_LUAS ?? "15 Ha", hasil: process.env.NEXT_PUBLIC_BUAH_2_HASIL ?? "8 Ton/Ha"  },
+  { name: process.env.NEXT_PUBLIC_BUAH_3_NAME ?? "Pepaya", luas: process.env.NEXT_PUBLIC_BUAH_3_LUAS ?? "10 Ha", hasil: process.env.NEXT_PUBLIC_BUAH_3_HASIL ?? "10 Ton/Ha" },
+  { name: process.env.NEXT_PUBLIC_BUAH_4_NAME ?? "Durian", luas: process.env.NEXT_PUBLIC_BUAH_4_LUAS ?? "5 Ha",  hasil: process.env.NEXT_PUBLIC_BUAH_4_HASIL ?? "5 Ton/Ha"  },
 ];
 
 const PERKEBUNAN_RAKYAT = [
-  { name: "Kelapa", luas: "30 Ha", hasil: "15 Ton/Ha" },
-  { name: "Tebu",   luas: "20 Ha", hasil: "1,5 Ton/Ha" },
+  { name: process.env.NEXT_PUBLIC_KEBUN_1_NAME ?? "Kelapa", luas: process.env.NEXT_PUBLIC_KEBUN_1_LUAS ?? "30 Ha", hasil: process.env.NEXT_PUBLIC_KEBUN_1_HASIL ?? "15 Ton/Ha"  },
+  { name: process.env.NEXT_PUBLIC_KEBUN_2_NAME ?? "Tebu",   luas: process.env.NEXT_PUBLIC_KEBUN_2_LUAS ?? "20 Ha", hasil: process.env.NEXT_PUBLIC_KEBUN_2_HASIL ?? "1,5 Ton/Ha" },
 ];
 
 function sumHa(data: { luas: string }[]) {
@@ -175,13 +181,90 @@ function IconTebu() {
   );
 }
 
+function IconJagung() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FFFDE7"/>
+      <path d="M22 33V16" stroke="#8D6E63" strokeWidth="1.8" strokeLinecap="round"/>
+      <rect x="16" y="16" width="12" height="14" rx="3" fill="#F9A825" opacity="0.85"/>
+      <path d="M16 20h12M16 24h12" stroke="#F57F17" strokeWidth="1" opacity="0.6"/>
+      <path d="M22 16c-2-2-2-5 0-7" stroke="#558B2F" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+      <path d="M22 16c2-2 2-5 0-7" stroke="#558B2F" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconSingkong() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#EFEBE9"/>
+      <path d="M22 12v20" stroke="#5D4037" strokeWidth="1.8" strokeLinecap="round"/>
+      <ellipse cx="16" cy="27" rx="5" ry="2.5" fill="#8D6E63" opacity="0.8" transform="rotate(-15 16 27)"/>
+      <ellipse cx="28" cy="29" rx="5" ry="2.5" fill="#6D4C41" opacity="0.8" transform="rotate(10 28 29)"/>
+      <ellipse cx="20" cy="31" rx="4" ry="2" fill="#795548" opacity="0.7" transform="rotate(-5 20 31)"/>
+      <path d="M22 14c-3-2-5-1-6 2" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+      <path d="M22 14c3-2 5-1 6 2" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconBawangMerah() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FCE4EC"/>
+      <path d="M22 32c-5 0-8-4-8-9 0-4 2-7 5-8l3-5 3 5c3 1 5 4 5 8 0 5-3 9-8 9z" fill="#E91E63" opacity="0.7"/>
+      <path d="M22 10v-3" stroke="#558B2F" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconTomat() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FFEBEE"/>
+      <circle cx="22" cy="25" r="10" fill="#E53935" opacity="0.85"/>
+      <path d="M18 17c1-2 4-2 6 0M22 17v-4" stroke="#2E7D32" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+      <path d="M22 17c-2-1-3-1-4 0" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+      <path d="M22 17c2-1 3-1 4 0" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconMelon() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#E8F5E9"/>
+      <ellipse cx="22" cy="24" rx="11" ry="9" fill="#66BB6A" opacity="0.75"/>
+      <path d="M12 24c3-4 6-5 10-5M32 24c-3-4-6-5-10-5" stroke="#2E7D32" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+      <path d="M22 15v-3" stroke="#558B2F" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconPepaya() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FFF3E0"/>
+      <path d="M22 12c-5 0-7 4-7 9 0 6 3 12 7 12s7-6 7-12c0-5-2-9-7-9z" fill="#FF8F00" opacity="0.8"/>
+      <path d="M22 12v-4" stroke="#558B2F" strokeWidth="1.6" strokeLinecap="round"/>
+      <path d="M19 10c0-2 1.5-3 3-3" stroke="#558B2F" strokeWidth="1.3" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 const KOMODITAS_ICONS: Record<string, React.ReactNode> = {
   "Kacang Kedelai": <IconKedelai />,
   "Kacang Tanah":   <IconKacangTanah />,
   "Kubis":          <IconKubis />,
+  "Jagung":         <IconJagung />,
+  "Singkong":       <IconSingkong />,
   "Cabe":           <IconCabe />,
+  "Bawang Merah":   <IconBawangMerah />,
+  "Tomat":          <IconTomat />,
   "Padi":           <IconPadi />,
   "Mangga":         <IconMangga />,
+  "Melon":          <IconMelon />,
+  "Pepaya":         <IconPepaya />,
   "Durian":         <IconDurian />,
   "Kelapa":         <IconKelapa />,
   "Tebu":           <IconTebu />,
@@ -262,13 +345,38 @@ export default function PotensiSection() {
 
       {/* ══════ HERO ══════ */}
       <div className="px-5 md:px-[80px] pt-[50px] pb-[30px]">
-        <h2 className="font-heading font-bold text-[32px] md:text-[42px] leading-[1.15] text-primary uppercase tracking-tight">
-          Potensi<br />Desa
-        </h2>
-        <p className="mt-4 font-sans text-[17px] md:text-[18px] leading-[1.7] text-muted max-w-[520px]">
-          Gambaran sumber daya alam Desa Balerejo di sektor pertanian, buah-buahan, dan
-          perkebunan rakyat — mencakup luas lahan tanam dan hasil produksi tiap komoditas.
-        </p>
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-14">
+          <div className="flex-1 min-w-0">
+            <h2 className="font-heading font-bold text-[32px] md:text-[42px] leading-[1.15] text-primary uppercase tracking-tight">
+              Potensi<br />Desa
+            </h2>
+            <p className="mt-4 font-sans text-[17px] md:text-[18px] leading-[1.7] text-muted max-w-[520px]">
+              Gambaran sumber daya alam Desa Balerejo di sektor pertanian, buah-buahan, dan
+              perkebunan rakyat — mencakup luas lahan tanam dan hasil produksi tiap komoditas.
+            </p>
+          </div>
+          <div className="shrink-0 hidden md:flex items-center justify-center">
+            <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="100" cy="160" rx="80" ry="12" fill="#E8F5EE" opacity="0.6"/>
+              {/* Large tree */}
+              <circle cx="100" cy="70" r="38" fill="#37644d" opacity="0.18"/>
+              <path d="M100 160V100" stroke="#5D4037" strokeWidth="5" strokeLinecap="round"/>
+              <path d="M100 105c0-10 8-17 18-17 0 10-8 17-18 17z" fill="#37644d" opacity="0.7"/>
+              <path d="M100 118c0-10-8-17-18-17 0 10 8 17 18 17z" fill="#5a9e75" opacity="0.7"/>
+              <path d="M100 95c0-12 10-20 22-20 0 12-10 20-22 20z" fill="#1D392B" opacity="0.55"/>
+              <path d="M100 95c0-12-10-20-22-20 0 12 10 20 22 20z" fill="#37644d" opacity="0.55"/>
+              {/* Small plants */}
+              <path d="M50 155V135" stroke="#5D4037" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M50 140c0-6 5-10 10-10 0 6-5 10-10 10z" fill="#5a9e75" opacity="0.6"/>
+              <path d="M50 147c0-6-5-10-10-10 0 6 5 10 10 10z" fill="#37644d" opacity="0.5"/>
+              <path d="M155 155V138" stroke="#5D4037" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M155 143c0-6 5-9 10-9 0 6-5 9-10 9z" fill="#DCBe82" opacity="0.7"/>
+              <path d="M155 150c0-5-5-9-10-9 0 5 5 9 10 9z" fill="#5a9e75" opacity="0.5"/>
+              {/* Ground line */}
+              <path d="M20 160h160" stroke="#E8F5EE" strokeWidth="2" opacity="0.8"/>
+            </svg>
+          </div>
+        </div>
       </div>
 
       {/* ══════ RINGKASAN LUAS LAHAN ══════ */}

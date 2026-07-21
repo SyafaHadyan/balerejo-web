@@ -472,6 +472,32 @@ function PctBarChart({ data, total }: { data: { label: string; value: number; pc
   );
 }
 
+function UnitBarChart({ data, unit }: { data: { name: string; value: number }[]; unit: string }) {
+  const max = Math.max(...data.map((d) => d.value), 1);
+  return (
+    <div className={`${CARD} p-6 w-full`}>
+      <div className="flex flex-col gap-[18px]">
+        {data.map(({ name, value }) => (
+          <div key={name} className="flex flex-col gap-[7px]">
+            <div className="flex items-center justify-between gap-4">
+              <span className="font-sans text-[15px] text-primary">{name}</span>
+              <span className="font-sans font-semibold text-[15px] text-[#37644d] shrink-0">
+                {value.toLocaleString("id-ID")} <span className="text-muted font-normal">{unit}</span>
+              </span>
+            </div>
+            <div className="relative h-[9px] rounded-[4px] bg-[rgba(55,100,77,0.12)]">
+              <div
+                className="absolute left-0 top-0 h-[9px] rounded-[4px] bg-gradient-to-r from-[#37644d] to-[#5a9e75] transition-all duration-700"
+                style={{ width: `${(value / max) * 100}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function DonutChart() {
   const maleFraction   = MALE_PCT / 100;
   const femaleFraction = 1 - maleFraction;
@@ -683,6 +709,7 @@ export default function InfografisSection() {
           <PctBarChart data={MATA_PENCAHARIAN} total={MATPENG_TOTAL} />
         </div>
       </SubSection>
+
     </section>
   );
 }
