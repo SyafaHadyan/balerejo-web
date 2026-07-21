@@ -148,13 +148,52 @@ function Realisasi2025Card() {
 
 export default function APBDesSection() {
   return (
-    <section className="px-5 md:px-[80px] py-[60px] flex flex-col gap-[30px] bg-surface" aria-label="APBDes">
-      <h2 className="font-heading font-bold text-[26px] leading-[1.3] text-primary">
-        Anggaran Pendapatan dan Belanja Desa
-      </h2>
-      <div className="flex flex-col md:flex-row gap-[30px] md:items-start">
-        <Anggaran2026Card />
-        <Realisasi2025Card />
+    <section className="flex flex-col bg-surface" aria-label="APBDes">
+
+      {/* ══════ HERO ══════ */}
+      <div className="px-5 md:px-[80px] pt-[50px] pb-[30px]">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-14">
+          <div className="flex-1 min-w-0">
+            <h2 className="font-heading font-bold text-[32px] md:text-[42px] leading-[1.15] text-primary uppercase tracking-tight">
+              Anggaran<br />Pendapatan<br />& Belanja
+            </h2>
+            <p className="mt-4 font-sans text-[17px] md:text-[18px] leading-[1.7] text-muted max-w-[520px]">
+              Rincian Anggaran Pendapatan dan Belanja Desa (APBDes) Balerejo — mencakup
+              anggaran tahun berjalan dan realisasi tahun sebelumnya.
+            </p>
+          </div>
+          <div className="shrink-0 hidden md:flex items-center justify-center">
+            <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="100" cy="160" rx="80" ry="12" fill="#E8F5EE" opacity="0.6"/>
+              {/* Document/ledger */}
+              <rect x="55" y="30" width="90" height="115" rx="8" fill="#fff" stroke="#E8F5EE" strokeWidth="2"/>
+              <rect x="55" y="30" width="90" height="24" rx="8" fill="#1D392B" opacity="0.12"/>
+              <path d="M55 54h90" stroke="#E8F5EE" strokeWidth="1.5"/>
+              {/* Lines */}
+              <rect x="68" y="64" width="50" height="5" rx="2.5" fill="#37644d" opacity="0.3"/>
+              <rect x="68" y="75" width="64" height="5" rx="2.5" fill="#37644d" opacity="0.2"/>
+              <rect x="68" y="86" width="42" height="5" rx="2.5" fill="#37644d" opacity="0.25"/>
+              <rect x="68" y="97" width="58" height="5" rx="2.5" fill="#37644d" opacity="0.2"/>
+              <path d="M68 110h64" stroke="#E1DFD9" strokeWidth="1.2"/>
+              {/* Total row */}
+              <rect x="68" y="116" width="30" height="6" rx="3" fill="#1D392B" opacity="0.35"/>
+              <rect x="118" y="116" width="24" height="6" rx="3" fill="#DCBe82" opacity="0.7"/>
+              {/* Coin stack */}
+              <ellipse cx="152" cy="128" rx="14" ry="5" fill="#DCBe82" opacity="0.8"/>
+              <ellipse cx="152" cy="120" rx="14" ry="5" fill="#DCBe82" opacity="0.9"/>
+              <ellipse cx="152" cy="112" rx="14" ry="5" fill="#DCBe82"/>
+              <path d="M138 112v16M166 112v16" stroke="#B8860B" strokeWidth="1" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      {/* ══════ CARDS ══════ */}
+      <div className="px-5 md:px-[80px] pb-[60px]">
+        <div className="flex flex-col md:flex-row gap-[30px] md:items-start">
+          <Anggaran2026Card />
+          <Realisasi2025Card />
+        </div>
       </div>
     </section>
   );

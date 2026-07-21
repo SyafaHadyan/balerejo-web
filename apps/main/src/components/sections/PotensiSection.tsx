@@ -345,13 +345,38 @@ export default function PotensiSection() {
 
       {/* ══════ HERO ══════ */}
       <div className="px-5 md:px-[80px] pt-[50px] pb-[30px]">
-        <h2 className="font-heading font-bold text-[32px] md:text-[42px] leading-[1.15] text-primary uppercase tracking-tight">
-          Potensi<br />Desa
-        </h2>
-        <p className="mt-4 font-sans text-[17px] md:text-[18px] leading-[1.7] text-muted max-w-[520px]">
-          Gambaran sumber daya alam Desa Balerejo di sektor pertanian, buah-buahan, dan
-          perkebunan rakyat — mencakup luas lahan tanam dan hasil produksi tiap komoditas.
-        </p>
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-14">
+          <div className="flex-1 min-w-0">
+            <h2 className="font-heading font-bold text-[32px] md:text-[42px] leading-[1.15] text-primary uppercase tracking-tight">
+              Potensi<br />Desa
+            </h2>
+            <p className="mt-4 font-sans text-[17px] md:text-[18px] leading-[1.7] text-muted max-w-[520px]">
+              Gambaran sumber daya alam Desa Balerejo di sektor pertanian, buah-buahan, dan
+              perkebunan rakyat — mencakup luas lahan tanam dan hasil produksi tiap komoditas.
+            </p>
+          </div>
+          <div className="shrink-0 hidden md:flex items-center justify-center">
+            <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="100" cy="160" rx="80" ry="12" fill="#E8F5EE" opacity="0.6"/>
+              {/* Large tree */}
+              <circle cx="100" cy="70" r="38" fill="#37644d" opacity="0.18"/>
+              <path d="M100 160V100" stroke="#5D4037" strokeWidth="5" strokeLinecap="round"/>
+              <path d="M100 105c0-10 8-17 18-17 0 10-8 17-18 17z" fill="#37644d" opacity="0.7"/>
+              <path d="M100 118c0-10-8-17-18-17 0 10 8 17 18 17z" fill="#5a9e75" opacity="0.7"/>
+              <path d="M100 95c0-12 10-20 22-20 0 12-10 20-22 20z" fill="#1D392B" opacity="0.55"/>
+              <path d="M100 95c0-12-10-20-22-20 0 12 10 20 22 20z" fill="#37644d" opacity="0.55"/>
+              {/* Small plants */}
+              <path d="M50 155V135" stroke="#5D4037" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M50 140c0-6 5-10 10-10 0 6-5 10-10 10z" fill="#5a9e75" opacity="0.6"/>
+              <path d="M50 147c0-6-5-10-10-10 0 6 5 10 10 10z" fill="#37644d" opacity="0.5"/>
+              <path d="M155 155V138" stroke="#5D4037" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M155 143c0-6 5-9 10-9 0 6-5 9-10 9z" fill="#DCBe82" opacity="0.7"/>
+              <path d="M155 150c0-5-5-9-10-9 0 5 5 9 10 9z" fill="#5a9e75" opacity="0.5"/>
+              {/* Ground line */}
+              <path d="M20 160h160" stroke="#E8F5EE" strokeWidth="2" opacity="0.8"/>
+            </svg>
+          </div>
+        </div>
       </div>
 
       {/* ══════ RINGKASAN LUAS LAHAN ══════ */}
