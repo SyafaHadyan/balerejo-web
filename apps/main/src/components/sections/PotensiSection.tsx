@@ -7,16 +7,22 @@ import React from "react";
    disertakan karena tidak ada angka luas tanam/hasil yang bisa ditampilkan. */
 
 const TANAMAN_PANGAN = [
-  { name: "Kacang Kedelai", luas: "567 Ha", hasil: "5 Ton/Ha" },
-  { name: "Kacang Tanah",   luas: "502 Ha", hasil: "3 Ton/Ha" },
-  { name: "Kubis",          luas: "352 Ha", hasil: "6 Ton/Ha" },
-  { name: "Cabe",           luas: "52 Ha",  hasil: "4 Ton/Ha" },
+  { name: "Kacang Kedelai", luas: "567 Ha", hasil: "5 Ton/Ha"   },
+  { name: "Kacang Tanah",   luas: "502 Ha", hasil: "3 Ton/Ha"   },
+  { name: "Kubis",          luas: "352 Ha", hasil: "6 Ton/Ha"   },
+  { name: "Jagung",         luas: "120 Ha", hasil: "4 Ton/Ha"   },
+  { name: "Singkong",       luas: "45 Ha",  hasil: "12 Ton/Ha"  },
+  { name: "Cabe",           luas: "52 Ha",  hasil: "4 Ton/Ha"   },
+  { name: "Bawang Merah",   luas: "28 Ha",  hasil: "6 Ton/Ha"   },
+  { name: "Tomat",          luas: "22 Ha",  hasil: "8 Ton/Ha"   },
   { name: "Padi",           luas: "35 Ha",  hasil: "1,4 Ton/Ha" },
 ];
 
 const BUAH_BUAHAN = [
-  { name: "Mangga", luas: "20 Ha", hasil: "5 Ton/Ha" },
-  { name: "Durian", luas: "5 Ha",  hasil: "5 Ton/Ha" },
+  { name: "Mangga", luas: "20 Ha", hasil: "5 Ton/Ha"  },
+  { name: "Melon",  luas: "15 Ha", hasil: "8 Ton/Ha"  },
+  { name: "Pepaya", luas: "10 Ha", hasil: "10 Ton/Ha" },
+  { name: "Durian", luas: "5 Ha",  hasil: "5 Ton/Ha"  },
 ];
 
 const PERKEBUNAN_RAKYAT = [
@@ -175,13 +181,90 @@ function IconTebu() {
   );
 }
 
+function IconJagung() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FFFDE7"/>
+      <path d="M22 33V16" stroke="#8D6E63" strokeWidth="1.8" strokeLinecap="round"/>
+      <rect x="16" y="16" width="12" height="14" rx="3" fill="#F9A825" opacity="0.85"/>
+      <path d="M16 20h12M16 24h12" stroke="#F57F17" strokeWidth="1" opacity="0.6"/>
+      <path d="M22 16c-2-2-2-5 0-7" stroke="#558B2F" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+      <path d="M22 16c2-2 2-5 0-7" stroke="#558B2F" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconSingkong() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#EFEBE9"/>
+      <path d="M22 12v20" stroke="#5D4037" strokeWidth="1.8" strokeLinecap="round"/>
+      <ellipse cx="16" cy="27" rx="5" ry="2.5" fill="#8D6E63" opacity="0.8" transform="rotate(-15 16 27)"/>
+      <ellipse cx="28" cy="29" rx="5" ry="2.5" fill="#6D4C41" opacity="0.8" transform="rotate(10 28 29)"/>
+      <ellipse cx="20" cy="31" rx="4" ry="2" fill="#795548" opacity="0.7" transform="rotate(-5 20 31)"/>
+      <path d="M22 14c-3-2-5-1-6 2" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+      <path d="M22 14c3-2 5-1 6 2" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconBawangMerah() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FCE4EC"/>
+      <path d="M22 32c-5 0-8-4-8-9 0-4 2-7 5-8l3-5 3 5c3 1 5 4 5 8 0 5-3 9-8 9z" fill="#E91E63" opacity="0.7"/>
+      <path d="M22 10v-3" stroke="#558B2F" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconTomat() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FFEBEE"/>
+      <circle cx="22" cy="25" r="10" fill="#E53935" opacity="0.85"/>
+      <path d="M18 17c1-2 4-2 6 0M22 17v-4" stroke="#2E7D32" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+      <path d="M22 17c-2-1-3-1-4 0" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+      <path d="M22 17c2-1 3-1 4 0" stroke="#558B2F" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconMelon() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#E8F5E9"/>
+      <ellipse cx="22" cy="24" rx="11" ry="9" fill="#66BB6A" opacity="0.75"/>
+      <path d="M12 24c3-4 6-5 10-5M32 24c-3-4-6-5-10-5" stroke="#2E7D32" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+      <path d="M22 15v-3" stroke="#558B2F" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconPepaya() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#FFF3E0"/>
+      <path d="M22 12c-5 0-7 4-7 9 0 6 3 12 7 12s7-6 7-12c0-5-2-9-7-9z" fill="#FF8F00" opacity="0.8"/>
+      <path d="M22 12v-4" stroke="#558B2F" strokeWidth="1.6" strokeLinecap="round"/>
+      <path d="M19 10c0-2 1.5-3 3-3" stroke="#558B2F" strokeWidth="1.3" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 const KOMODITAS_ICONS: Record<string, React.ReactNode> = {
   "Kacang Kedelai": <IconKedelai />,
   "Kacang Tanah":   <IconKacangTanah />,
   "Kubis":          <IconKubis />,
+  "Jagung":         <IconJagung />,
+  "Singkong":       <IconSingkong />,
   "Cabe":           <IconCabe />,
+  "Bawang Merah":   <IconBawangMerah />,
+  "Tomat":          <IconTomat />,
   "Padi":           <IconPadi />,
   "Mangga":         <IconMangga />,
+  "Melon":          <IconMelon />,
+  "Pepaya":         <IconPepaya />,
   "Durian":         <IconDurian />,
   "Kelapa":         <IconKelapa />,
   "Tebu":           <IconTebu />,
