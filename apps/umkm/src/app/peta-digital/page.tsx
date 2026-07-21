@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import NavbarJelajah from "@/components/NavbarJelajah";
 import UmkmMapSection from "@/components/sections/UmkmMapSection";
-import FooterJelajah from "@/components/FooterJelajah";
 
 export const metadata: Metadata = {
   title: "Peta Digital — Jelajah Balerejo",
@@ -14,7 +13,6 @@ export default function PetaDigitalPage() {
       <main>
         <UmkmMapSection />
       </main>
-      <FooterJelajah />
     </>
   );
 }

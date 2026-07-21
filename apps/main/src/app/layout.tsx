@@ -7,6 +7,7 @@ const playfair = Playfair_Display({
   weight: ["700"],
   variable: "--font-playfair",
   display: "swap",
+  preload: false,
 });
 
 const sourceSans = Source_Sans_3({
@@ -14,6 +15,7 @@ const sourceSans = Source_Sans_3({
   weight: ["400", "600"],
   variable: "--font-source-sans",
   display: "swap",
+  preload: false,
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://balerejo.desa.id";

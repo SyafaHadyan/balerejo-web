@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import type React from "react";
 
 const CARD = "bg-white border border-[#e5e5e5] rounded-[16px] shadow-[0_2px_8px_rgba(0,0,0,0.06)]";
 
@@ -39,7 +39,7 @@ function IconUtara() {
   );
 }
 
-type BatasDesa = { arah: string; wilayah: string; langsung?: boolean; Icon: () => React.JSX.Element };
+type BatasDesa = { arah: string; wilayah: string; langsung?: boolean; Icon: () => React.ReactElement };
 
 const BATAS_DESA: BatasDesa[] = [
   { arah: "Barat",   wilayah: "Desa Panggungrejo, Kaligambir Kec. Panggungrejo",                        Icon: IconBarat },
