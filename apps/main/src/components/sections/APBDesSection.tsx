@@ -139,7 +139,7 @@ function Realisasi2025Card() {
       <div className={DIVIDER} />
 
       <div className="flex flex-col gap-2">
-        <Row label="Surplus / Devisit" value={REALISASI_2025.surplus} />
+        <Row label="Surplus / Defisit" value={REALISASI_2025.surplus} />
         <Row label="SILPA"             value={REALISASI_2025.silpa} />
       </div>
     </div>
