@@ -229,25 +229,37 @@ export default function UmkmMapSection() {
           sidebarWidth={SIDEBAR_WIDTH}
         />
 
-        {/* Toggle button — slides right when sidebar opens */}
+        {/* Toggle tab — vertically centered, hugs the sidebar's right edge */}
         <button
           type="button"
           onClick={() => setIsSidebarOpen((prev) => !prev)}
           aria-label={isSidebarOpen ? "Sembunyikan daftar" : "Tampilkan daftar"}
-          className="absolute top-4 z-30 flex items-center gap-1.5 bg-white rounded-lg px-3 py-2 shadow-md text-[13px] font-semibold text-[#1D392B] border border-[#e0e0e0] hover:bg-[#f5f8f5] transition-colors"
+          className="absolute z-30 hover:bg-[#f0f4f0] transition-colors"
           style={{
-            left: isSidebarOpen ? 376 : 16,
+            left: isSidebarOpen ? 360 : 0,
+            top: "50%",
+            transform: "translateY(-50%)",
             transition: "left 300ms ease-in-out",
+            width: 20,
+            height: 52,
+            background: "white",
+            border: "1px solid #e0e0e0",
+            borderLeft: "none",
+            borderRadius: "0 8px 8px 0",
+            boxShadow: "2px 2px 8px rgba(0,0,0,0.08)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
           }}
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
             {isSidebarOpen ? (
-              <path d="M11 19l-7-7 7-7M18 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M11 17l-5-5 5-5M17 17l-5-5 5-5" stroke="#1D392B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             ) : (
-              <path d="M13 5l7 7-7 7M6 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M13 17l5-5-5-5M7 17l5-5-5-5" stroke="#1D392B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             )}
           </svg>
-          {isSidebarOpen ? "Sembunyikan" : "Tampilkan daftar"}
         </button>
 
         {/* Legend — bottom-12 (48px) clears MapLibre's attribution bar */}
