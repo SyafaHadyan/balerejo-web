@@ -6,6 +6,7 @@
       "outputs": ["out/**", ".next/**"]
     },
     "dev": {
+      "dependsOn": ["^build"],
       "cache": false,
       "persistent": true
     },
