@@ -13,7 +13,7 @@ const NAV_LINKS = [
 type ActivePage = (typeof NAV_LINKS)[number]["id"];
 
 interface NavbarProps {
-  activePage: ActivePage;
+  activePage?: ActivePage;
 }
 
 export default function Navbar({ activePage }: NavbarProps) {
