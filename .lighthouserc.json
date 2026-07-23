@@ -2,8 +2,7 @@
   "ci": {
     "collect": {
       "numberOfRuns": 3,
-      "skipAudits": ["uses-http2"],
-      "exclude": [".*404.*"]
+      "skipAudits": ["uses-http2"]
     },
     "assert": {
       "assertions": {
