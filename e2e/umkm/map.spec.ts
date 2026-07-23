@@ -14,6 +14,8 @@ test.describe("Peta Digital", () => {
   });
 
   test("shows sidebar toggle button", async ({ page }) => {
-    await expect(page.getByRole("button", { name: /sidebar/i })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /Tampilkan daftar|Sembunyikan daftar/i })
+    ).toBeVisible();
   });
 });

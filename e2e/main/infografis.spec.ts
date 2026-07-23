@@ -9,17 +9,17 @@ test.describe("Infografis", () => {
     await expect(page).toHaveTitle(/Infografis/);
   });
 
-  test("shows demografi tab by default", async ({ page }) => {
-    await expect(page.getByRole("tab", { name: /Demografi/i })).toBeVisible();
+  test("shows Penduduk tab by default", async ({ page }) => {
+    await expect(page.getByRole("button", { name: "Penduduk" })).toBeVisible();
   });
 
   test("can switch to Potensi Desa tab", async ({ page }) => {
-    await page.getByRole("tab", { name: /Potensi Desa/i }).click();
+    await page.getByRole("button", { name: "Potensi Desa" }).click();
     await expect(page.getByText(/Tanaman Pangan/i)).toBeVisible();
   });
 
   test("can switch to APBDes tab", async ({ page }) => {
-    await page.getByRole("tab", { name: /APBDes/i }).click();
+    await page.getByRole("button", { name: "APBDes" }).click();
     await expect(page.getByText(/Anggaran/i)).toBeVisible();
   });
 });

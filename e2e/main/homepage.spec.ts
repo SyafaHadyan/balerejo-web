@@ -10,7 +10,7 @@ test.describe("Homepage", () => {
   });
 
   test("shows hero heading", async ({ page }) => {
-    await expect(page.getByRole("heading", { name: /Desa Balerejo/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /Desa Balerejo/i, level: 1 })).toBeVisible();
   });
 
   test("shows stats bar", async ({ page }) => {
