@@ -1,6 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, devices } from "@playwright/test";
 
-test.use({ viewport: { width: 390, height: 844 } });
+test.use({ ...devices["iPhone 14"] });
 
 test.describe("Mobile — Main site", () => {
   test("homepage renders on mobile", async ({ page }) => {
