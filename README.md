@@ -17,7 +17,7 @@ This monorepo contains two separate Next.js applications deployed to their respe
 
 | Package | Description |
 |---------|-------------|
-| `packages/shared` | Shared map components (MapCN/MapLibre GL) and utilities |
+| `packages/shared` | Shared map components (MapLibre GL via MapCN) and utilities - imported directly as source, not pre-built |
 
 ---
 
@@ -28,7 +28,8 @@ This monorepo contains two separate Next.js applications deployed to their respe
 - **Styling** - Tailwind CSS v4
 - **Maps** - MapLibre GL via MapCN, OpenStreetMap tiles
 - **Monorepo** - Turborepo
-- **Deployment** - Cloudflare Pages
+- **Testing** - Playwright (E2E)
+- **CI/CD** - GitHub Actions + Cloudflare Pages
 
 ---
 
@@ -36,7 +37,7 @@ This monorepo contains two separate Next.js applications deployed to their respe
 
 ### Prerequisites
 
-- Node.js 20 or later
+- Node.js 22 or later
 - npm 10 or later
 
 ### Installation
@@ -99,11 +100,15 @@ balerejo-web/
 │       │   └── data/           # GeoJSON boundary, map styles
 │       ├── next.config.ts
 │       └── package.json
+├── e2e/
+│   ├── main/                   # E2E tests for main site
+│   └── umkm/                   # E2E tests for UMKM site
 ├── packages/
 │   └── shared/                 # @balerejo/shared
 │       └── src/
 │           ├── map.tsx         # MapCN components
 │           └── utils.ts        # Utility functions
+├── playwright.config.ts
 ├── turbo.json
 └── package.json
 ```
@@ -120,14 +125,53 @@ Run from the repository root:
 | `npm run build` | Build both apps for production |
 | `npm run lint` | Lint all packages |
 | `npm run type-check` | Type-check all packages |
+| `npm run test:e2e` | Run Playwright E2E tests (headless) |
+| `npm run test:e2e:ui` | Run Playwright E2E tests with interactive UI |
 
 ---
 
-## Deployment
+## Testing
+
+E2E tests are written with Playwright and cover both apps across desktop and mobile (iPhone 14) viewports.
+
+### Running locally
+
+Make sure the dev servers are running first, then:
+
+```bash
+npm run test:e2e
+```
+
+Playwright will reuse the existing dev servers (`reuseExistingServer: true`). To open the interactive test UI:
+
+```bash
+npm run test:e2e:ui
+```
+
+### Installing browsers
+
+Playwright uses Chromium and WebKit. Install them once after cloning:
+
+```bash
+npx playwright install chromium webkit
+```
+
+---
+
+## CI/CD
+
+### GitHub Actions
+
+Two workflows run on every push and pull request:
+
+| Workflow | Trigger | Jobs |
+|----------|---------|------|
+| `ci.yml` | Every push & PR | Type check, Lint, Build, Audit |
+| `e2e.yml` | Every push, PR & nightly | Playwright E2E tests |
+
+### Cloudflare Pages
 
 Both applications are deployed as separate Cloudflare Pages projects from this repository.
-
-### Cloudflare Pages Configuration
 
 **Main site (`balerejo-main`)**
 
