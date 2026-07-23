@@ -1,0 +1,47 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "files": [
+    "README.md",
+    ".github/**/*.yml",
+    "playwright.config.ts",
+    "turbo.json"
+  ],
+  "ignorePaths": [
+    "node_modules"
+  ],
+  "words": [
+    "Balerejo", "balerejo",
+    "Panggungrejo",
+    "Blitar",
+    "Brawijaya",
+    "FILKOM",
+    "UMKM", "umkm",
+    "APBDes",
+    "infografis",
+    "jelajah",
+    "wordmark",
+    "maplibregl", "MapLibre", "MapCN",
+    "noopener", "noreferrer",
+    "Turborepo", "Turbopack",
+    "bundlesize", "cspell",
+    "lhci", "LHCI",
+    "typecheck",
+    "subdomain",
+    "testdir",
+    "testmatch",
+    "Hadyan", "Syafa",
+    "desabalerejo",
+    "Desa", "desa",
+    "Beranda",
+    "Galeri",
+    "Peta", "peta",
+    "Profil",
+    "Jawa",
+    "Kabupaten",
+    "Kecamatan",
+    "Universitas",
+    "autorun",
+    "viewports"
+  ]
+}
