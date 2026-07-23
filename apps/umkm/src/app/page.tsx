@@ -7,6 +7,13 @@ import FooterJelajah from "@/components/FooterJelajah";
 
 export const metadata: Metadata = {
   title: "Katalog UMKM",
+  description:
+    "Jelajahi katalog produk UMKM unggulan Desa Balerejo — makanan, kerajinan, fashion, dan lebih banyak lagi dari warga lokal.",
+  openGraph: {
+    title: "Katalog UMKM — Jelajah Balerejo",
+    description:
+      "Jelajahi katalog produk UMKM unggulan Desa Balerejo — makanan, kerajinan, fashion, dan lebih banyak lagi dari warga lokal.",
+  },
 };
 
 export default function UmkmPage() {

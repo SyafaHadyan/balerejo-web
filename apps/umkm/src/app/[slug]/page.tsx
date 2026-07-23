@@ -17,8 +17,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const product = PRODUCTS.find((p) => p.slug === slug);
+  if (!product) return { title: "Produk Tidak Ditemukan" };
   return {
-    title: product?.name ?? "Detail Produk",
+    title: product.name,
+    description: product.description,
+    openGraph: {
+      title: `${product.name} — Jelajah Balerejo`,
+      description: product.description,
+      images: [{ url: product.image, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} — Jelajah Balerejo`,
+      description: product.description,
+      images: [product.image],
+    },
   };
 }
 
