@@ -1,0 +1,71 @@
+name: Lighthouse
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+env:
+  NEXT_TELEMETRY_DISABLED: 1
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  lighthouse-main:
+    name: Lighthouse - Main site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build main
+        run: npm run build --workspace=apps/main
+
+      - name: Remove 404 from Lighthouse scope
+        run: rm -f apps/main/out/404.html
+
+      - name: Run Lighthouse CI - main
+        run: ./node_modules/.bin/lhci autorun --collect.staticDistDir=apps/main/out
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lighthouse-umkm:
+    name: Lighthouse - UMKM site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build umkm
+        run: npm run build --workspace=apps/umkm
+
+      - name: Remove 404 from Lighthouse scope
+        run: rm -f apps/umkm/out/404.html
+
+      - name: Run Lighthouse CI - umkm
+        run: ./node_modules/.bin/lhci autorun --collect.staticDistDir=apps/umkm/out
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
