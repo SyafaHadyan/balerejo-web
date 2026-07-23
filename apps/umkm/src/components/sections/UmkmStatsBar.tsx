@@ -1,20 +1,13 @@
+import { PRODUCTS } from "@/data/umkm";
+
+const total     = PRODUCTS.length;
+const kategori  = new Set(PRODUCTS.map((p) => p.category)).size;
+
 const STATS = [
-  {
-    value: process.env.NEXT_PUBLIC_UMKM_STAT_PRODUK ?? "6",
-    label: "Produk Terdaftar",
-  },
-  {
-    value: process.env.NEXT_PUBLIC_UMKM_STAT_PELAKU ?? "5",
-    label: "Pelaku UMKM",
-  },
-  {
-    value: process.env.NEXT_PUBLIC_UMKM_STAT_KATEGORI ?? "3",
-    label: "Kategori Produk",
-  },
-  {
-    value: process.env.NEXT_PUBLIC_UMKM_STAT_ASLI ?? "100%",
-    label: "Produk Asli Desa",
-  },
+  { value: String(total),    label: "Produk Terdaftar" },
+  { value: String(total),    label: "Pelaku UMKM" },
+  { value: String(kategori), label: "Kategori Produk" },
+  { value: "100%",           label: "Produk Asli Desa" },
 ];
 
 export default function UmkmStatsBar() {
