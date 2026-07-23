@@ -15,11 +15,11 @@ test.describe("Infografis", () => {
 
   test("can switch to Potensi Desa tab", async ({ page }) => {
     await page.getByRole("button", { name: "Potensi Desa" }).click();
-    await expect(page.getByText(/Tanaman Pangan/i)).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Tanaman Pangan" })).toBeVisible();
   });
 
   test("can switch to APBDes tab", async ({ page }) => {
     await page.getByRole("button", { name: "APBDes" }).click();
-    await expect(page.getByText(/Anggaran/i)).toBeVisible();
+    await expect(page.getByRole("heading", { name: /Anggaran Pendapatan/i })).toBeVisible();
   });
 });
