@@ -35,7 +35,7 @@ jobs:
         run: npm run build --workspace=apps/main
 
       - name: Run Lighthouse CI - main
-        run: lhci autorun --collect.staticDistDir=apps/main/out
+        run: ./node_modules/.bin/lhci autorun --collect.staticDistDir=apps/main/out
         env:
           LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -60,6 +60,6 @@ jobs:
         run: npm run build --workspace=apps/umkm
 
       - name: Run Lighthouse CI - umkm
-        run: lhci autorun --collect.staticDistDir=apps/umkm/out
+        run: ./node_modules/.bin/lhci autorun --collect.staticDistDir=apps/umkm/out
         env:
           LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
