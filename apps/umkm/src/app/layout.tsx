@@ -29,6 +29,38 @@ export const metadata: Metadata = {
   },
   description:
     "Temukan produk unggulan UMKM, wisata, dan peta digital Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blitar.",
+  keywords: [
+    "UMKM Balerejo",
+    "produk lokal Blitar",
+    "wisata Balerejo",
+    "peta digital desa",
+    "Panggungrejo",
+    "Kabupaten Blitar",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: SITE_URL,
+    siteName: "Jelajah Balerejo",
+    title: "Jelajah Balerejo — UMKM & Wisata Desa Balerejo",
+    description:
+      "Temukan produk unggulan UMKM, wisata, dan peta digital Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blitar.",
+    images: [
+      {
+        url: "/images/hero.jpeg",
+        width: 1280,
+        height: 720,
+        alt: "UMKM dan wisata Desa Balerejo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jelajah Balerejo — UMKM & Wisata Desa Balerejo",
+    description:
+      "Temukan produk unggulan UMKM, wisata, dan peta digital Desa Balerejo.",
+    images: ["/images/hero.jpeg"],
+  },
 };
 
 export default function RootLayout({
