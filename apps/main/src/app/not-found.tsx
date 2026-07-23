@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Halaman Tidak Ditemukan",
   description: "Halaman yang Anda cari tidak ditemukan di situs web resmi Desa Balerejo.",
+  robots: { index: true, follow: true },
 };
 
 export default function NotFound() {

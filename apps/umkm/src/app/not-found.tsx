@@ -6,6 +6,7 @@ import FooterJelajah from "@/components/FooterJelajah";
 export const metadata: Metadata = {
   title: "Halaman Tidak Ditemukan",
   description: "Halaman yang Anda cari tidak ditemukan di katalog UMKM Desa Balerejo.",
+  robots: { index: true, follow: true },
 };
 
 export default function NotFound() {
