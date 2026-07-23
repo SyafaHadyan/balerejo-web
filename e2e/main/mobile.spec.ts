@@ -14,7 +14,7 @@ test.describe("Mobile — Main site", () => {
     await menuButton.click();
     await expect(page.getByRole("navigation", { name: "Navigasi mobile" })).toBeVisible();
     await page.getByRole("button", { name: /Tutup menu/i }).click();
-    await expect(page.getByRole("navigation", { name: "Navigasi mobile" })).toBeHidden();
+    await expect(page.locator("#mobile-menu")).toHaveCSS("opacity", "0");
   });
 
   test("mobile menu navigates to Profil Desa", async ({ page }) => {

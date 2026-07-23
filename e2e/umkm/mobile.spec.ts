@@ -13,7 +13,7 @@ test.describe("Mobile — UMKM site", () => {
     await page.getByRole("button", { name: /Buka menu/i }).click();
     await expect(page.getByRole("navigation", { name: "Navigasi mobile" })).toBeVisible();
     await page.getByRole("button", { name: /Tutup menu/i }).click();
-    await expect(page.getByRole("navigation", { name: "Navigasi mobile" })).toBeHidden();
+    await expect(page.locator("#mobile-menu-jelajah")).toHaveCSS("opacity", "0");
   });
 
   test("peta digital renders on mobile", async ({ page }) => {
