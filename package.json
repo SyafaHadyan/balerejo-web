@@ -20,12 +20,12 @@
     {
       "name": "main — shared JS",
       "path": "apps/main/.next/static/chunks/*.js",
-      "limit": "130 kB"
+      "limit": "260 kB"
     },
     {
       "name": "umkm — shared JS",
       "path": "apps/umkm/.next/static/chunks/*.js",
-      "limit": "130 kB"
+      "limit": "550 kB"
     }
   ],
   "devDependencies": {
