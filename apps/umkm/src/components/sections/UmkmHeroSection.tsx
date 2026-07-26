@@ -31,15 +31,7 @@ export default function UmkmHeroSection() {
         </p>
       </div>
 
-      {/* slideshow dots */}
-      <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-[6px]"
-        aria-hidden="true"
-      >
-        <div className="size-[9px] rounded-full bg-accent" />
-        <div className="size-[9px] rounded-full bg-white/40" />
-        <div className="size-[9px] rounded-full bg-white/40" />
-      </div>
+
     </section>
   );
 }
