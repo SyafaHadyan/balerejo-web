@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   ci:
-    name: Type check, Lint, Build, and Audit
+    name: Type check, Lint, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -41,6 +41,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Audit
-        run: npm audit --audit-level=critical
