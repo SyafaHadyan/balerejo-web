@@ -3,6 +3,7 @@ import NavbarJelajah from "@/components/NavbarJelajah";
 import UmkmHeroSection from "@/components/sections/UmkmHeroSection";
 import UmkmStatsBar from "@/components/sections/UmkmStatsBar";
 import UmkmGridSection from "@/components/sections/UmkmGridSection";
+import HasilBumiSection from "@/components/sections/HasilBumiSection";
 import FooterJelajah from "@/components/FooterJelajah";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function UmkmPage() {
         <UmkmHeroSection />
         <UmkmStatsBar />
         <UmkmGridSection />
+        <HasilBumiSection />
       </main>
       <FooterJelajah />
     </>
