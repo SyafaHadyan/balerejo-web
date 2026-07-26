@@ -9,6 +9,13 @@ import { WISATA, type WisataSpot } from "@/data/wisata";
 
 const SIDEBAR_WIDTH = 360;
 
+const POSKO = {
+  name: "Posko MMD FILKOM 2026 Kelompok 46",
+  address: "Desa Balerejo, Kec. Panggungrejo, Kab. Blitar",
+  lat: -8.257354,
+  lng: 112.299175,
+};
+
 const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   pantai: "PANTAI",
   dam: "DAM",
@@ -160,7 +167,7 @@ function WisataCard({
 /* ── Main dashboard ─────────────────────────────────────────── */
 export default function UmkmMapSection() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"umkm" | "wisata">("umkm");
+  const [activeTab, setActiveTab] = useState<"umkm" | "wisata" | "spesial">("umkm");
   const [search, setSearch] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -193,7 +200,9 @@ export default function UmkmMapSection() {
   function handleMarkerClick(slug: string) {
     setSelectedSlug((prev) => (prev === slug ? null : slug));
     /* Auto-switch sidebar tab to match the clicked marker */
-    setActiveTab(slug.startsWith("wisata:") ? "wisata" : "umkm");
+    if (slug === "posko") setActiveTab("spesial");
+    else if (slug.startsWith("wisata:")) setActiveTab("wisata");
+    else setActiveTab("umkm");
     if (window.innerWidth < 768) setIsSidebarOpen(false);
   }
 
@@ -248,67 +257,102 @@ export default function UmkmMapSection() {
           >
             Wisata ({WISATA.length})
           </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("spesial")}
+            className={`flex-1 py-2.5 text-[12px] font-semibold transition-colors ${
+              activeTab === "spesial"
+                ? "text-[#b8860b] border-b-2 border-[#b8860b]"
+                : "text-[#aaa] hover:text-[#555]"
+            }`}
+          >
+            Spesial
+          </button>
         </div>
 
-        {/* Search */}
-        <div className="px-4 py-3 border-b border-[#f0f0f0] shrink-0">
-          <SearchBar
-            value={search}
-            onChange={setSearch}
-            placeholder={activeTab === "umkm" ? "Cari UMKM..." : "Cari wisata..."}
-          />
-        </div>
+        {/* Search — hidden on Spesial tab */}
+        {activeTab !== "spesial" && (
+          <div className="px-4 py-3 border-b border-[#f0f0f0] shrink-0">
+            <SearchBar
+              value={search}
+              onChange={setSearch}
+              placeholder={activeTab === "umkm" ? "Cari UMKM..." : "Cari wisata..."}
+            />
+          </div>
+        )}
 
-        {/* Result count */}
-        <div className="px-4 py-2 shrink-0">
-          {activeTab === "umkm" ? (
-            <p className="text-[12px] text-[#888] font-sans">
-              {filteredUmkm.length === PRODUCTS.length
-                ? `${PRODUCTS.length} UMKM tersedia`
-                : `${filteredUmkm.length} dari ${PRODUCTS.length} hasil`}
-            </p>
-          ) : (
-            <p className="text-[12px] text-[#888] font-sans">
-              {filteredWisata.length === WISATA.length
-                ? `${WISATA.length} destinasi tersedia`
-                : `${filteredWisata.length} dari ${WISATA.length} hasil`}
-            </p>
-          )}
-        </div>
+        {/* Result count — hidden on Spesial tab */}
+        {activeTab !== "spesial" && (
+          <div className="px-4 py-2 shrink-0">
+            {activeTab === "umkm" ? (
+              <p className="text-[12px] text-[#888] font-sans">
+                {filteredUmkm.length === PRODUCTS.length
+                  ? `${PRODUCTS.length} UMKM tersedia`
+                  : `${filteredUmkm.length} dari ${PRODUCTS.length} hasil`}
+              </p>
+            ) : (
+              <p className="text-[12px] text-[#888] font-sans">
+                {filteredWisata.length === WISATA.length
+                  ? `${WISATA.length} destinasi tersedia`
+                  : `${filteredWisata.length} dari ${WISATA.length} hasil`}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* List — scrollable */}
         <div className="flex-1 overflow-y-auto">
-          {activeTab === "umkm" ? (
-            filteredUmkm.length === 0 ? (
-              <EmptyState />
-            ) : (
-              filteredUmkm.map((product) => (
-                <ProductCard
-                  key={product.slug}
-                  product={product}
-                  isSelected={product.slug === selectedSlug}
-                  onClick={() => handleMarkerClick(product.slug)}
-                />
-              ))
-            )
-          ) : (
-            filteredWisata.length === 0 ? (
-              <EmptyState />
-            ) : (
-              filteredWisata.map((spot) => (
-                <WisataCard
-                  key={spot.slug}
-                  spot={spot}
-                  isSelected={spot.slug === selectedWisataSlug}
-                  onClick={() => handleMarkerClick(`wisata:${spot.slug}`)}
-                />
-              ))
-            )
+          {activeTab === "umkm" && (
+            filteredUmkm.length === 0 ? <EmptyState /> : filteredUmkm.map((product) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                isSelected={product.slug === selectedSlug}
+                onClick={() => handleMarkerClick(product.slug)}
+              />
+            ))
+          )}
+          {activeTab === "wisata" && (
+            filteredWisata.length === 0 ? <EmptyState /> : filteredWisata.map((spot) => (
+              <WisataCard
+                key={spot.slug}
+                spot={spot}
+                isSelected={spot.slug === selectedWisataSlug}
+                onClick={() => handleMarkerClick(`wisata:${spot.slug}`)}
+              />
+            ))
+          )}
+          {activeTab === "spesial" && (
+            <button
+              type="button"
+              onClick={() => handleMarkerClick("posko")}
+              className={`w-full text-left flex gap-3 p-4 border-b border-[#f0f0f0] transition-colors duration-150 focus:outline-none ${
+                selectedSlug === "posko"
+                  ? "bg-[#fdf8ec] border-l-[5px] border-l-[#b8860b]"
+                  : "border-l-[5px] border-l-transparent hover:bg-[#fdf8ec]"
+              }`}
+            >
+              <div className="shrink-0 w-[60px] h-[60px] rounded-[8px] bg-[#b8860b] flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                </svg>
+              </div>
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <p className="text-[11px] font-semibold text-[#b8860b] tracking-[0.5px]">POSKO MMD</p>
+                <p
+                  style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+                  className="font-bold text-[14px] text-[#1D392B] leading-[1.3]"
+                >
+                  {POSKO.name}
+                </p>
+                <p className="text-[11px] text-[#888] leading-[1.4] mt-0.5">{POSKO.address}</p>
+              </div>
+            </button>
           )}
         </div>
 
-        {/* Pinned footer — quick action for selected item */}
-        {selectedSlug && !isWisataSelected && (
+        {/* Pinned footer */}
+        {selectedSlug && selectedSlug !== "posko" && !isWisataSelected && (
           <div className="shrink-0 px-4 py-3 border-t border-[#e0e0e0] bg-white">
             <Link
               href={`/${selectedSlug}`}
@@ -327,10 +371,7 @@ export default function UmkmMapSection() {
           const url = `https://www.google.com/maps/dir/?api=1&destination=${spot.lat},${spot.lng}`;
           return (
             <div className="shrink-0 px-4 py-3 border-t border-[#e0e0e0] bg-white">
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href={url} target="_blank" rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#7C5A2A] text-white text-[13px] font-semibold px-4 py-2.5 hover:opacity-90 transition-opacity"
               >
                 Buka di Google Maps
@@ -341,6 +382,21 @@ export default function UmkmMapSection() {
             </div>
           );
         })()}
+        {selectedSlug === "posko" && (
+          <div className="shrink-0 px-4 py-3 border-t border-[#e0e0e0] bg-white">
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${POSKO.lat},${POSKO.lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#b8860b] text-white text-[13px] font-semibold px-4 py-2.5 hover:opacity-90 transition-opacity"
+            >
+              Buka di Google Maps
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+            </a>
+          </div>
+        )}
       </div>
 
       {/* ── Map ── */}
@@ -399,6 +455,13 @@ export default function UmkmMapSection() {
               <circle cx="14" cy="14" r="5.5" fill="#f5dfa0" />
             </svg>
             <span className="text-[11px] text-[#555] font-sans">Wisata</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg width="16" height="20" viewBox="0 0 32 40" fill="none">
+              <path d="M16 0C8.268 0 2 6.268 2 14c0 9.333 14 26 14 26S30 23.333 30 14C30 6.268 23.732 0 16 0z" fill="#b8860b" stroke="#fff" strokeWidth="2" />
+              <polygon points="16,7 17.8,12.5 23.5,12.5 19,16 20.8,21.5 16,18 11.2,21.5 13,16 8.5,12.5 14.2,12.5" fill="#fff" />
+            </svg>
+            <span className="text-[11px] text-[#555] font-sans">Posko MMD</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-[14px] h-[3px] bg-[#c0392b] rounded-full" />

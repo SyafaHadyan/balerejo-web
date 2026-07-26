@@ -19,6 +19,14 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   sumber: "SUMBER AIR",
 };
 
+const POSKO = {
+  slug: "posko",
+  name: "Posko MMD FILKOM 2026 Kelompok 46",
+  address: "Desa Balerejo, Kec. Panggungrejo, Kab. Blitar",
+  lat: -8.257354,
+  lng: 112.299175,
+} as const;
+
 /* average of UMKM product coords — map initial center */
 const CENTER: [number, number] = [
   PRODUCTS.reduce((s, p) => s + p.lng, 0) / PRODUCTS.length,
@@ -64,6 +72,26 @@ function wisataPopupHTML(spot: WisataSpot): string {
       <p style="font-size:11px;color:#888;line-height:1.4;margin:0;">${spot.address}</p>
       <div style="display:flex;gap:6px;margin-top:6px;">
         ${spot.htm ? `<span style="display:inline-flex;align-items:center;border-radius:6px;background:#f5f5f0;color:#1D392B;font-size:11px;font-weight:600;padding:7px 10px;">${spot.htm}</span>` : ""}
+        <a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer"
+           style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:3px;border-radius:6px;border:1.5px solid #1D392B;color:#1D392B;font-size:11px;font-weight:600;padding:7px 8px;text-decoration:none;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          Rute
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function poskoPopupHTML(): string {
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${POSKO.lat},${POSKO.lng}`;
+  return `
+    <div style="display:flex;flex-direction:column;gap:6px;padding:14px;width:210px;font-family:sans-serif;box-sizing:border-box;">
+      <p style="font-size:11px;font-weight:700;color:#b8860b;margin:0;letter-spacing:1px;">POSKO MMD</p>
+      <p style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:14px;color:#1D392B;line-height:1.3;margin:0;padding-right:22px;">${POSKO.name}</p>
+      <p style="font-size:11px;color:#61665e;line-height:1.5;margin:0;">${POSKO.address}</p>
+      <div style="display:flex;gap:6px;margin-top:6px;">
         <a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer"
            style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:3px;border-radius:6px;border:1.5px solid #1D392B;color:#1D392B;font-size:11px;font-weight:600;padding:7px 8px;text-decoration:none;">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
@@ -129,25 +157,30 @@ function MapController({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /* Resolve selected item — either UMKM or wisata (prefix "wisata:") */
-  const isWisata = selectedSlug?.startsWith("wisata:") ?? false;
-  const rawSlug = isWisata ? selectedSlug!.slice(7) : selectedSlug;
+  /* Resolve selected item — UMKM, wisata (prefix "wisata:"), or posko */
+  const isPosko  = selectedSlug === "posko";
+  const isWisata = !isPosko && (selectedSlug?.startsWith("wisata:") ?? false);
+  const rawSlug  = isWisata ? selectedSlug!.slice(7) : selectedSlug;
 
   const product: Product | null = useMemo(
-    () => (!isWisata && rawSlug ? (PRODUCTS.find((p) => p.slug === rawSlug) ?? null) : null),
-    [isWisata, rawSlug],
+    () => (!isWisata && !isPosko && rawSlug ? (PRODUCTS.find((p) => p.slug === rawSlug) ?? null) : null),
+    [isWisata, isPosko, rawSlug],
   );
   const wisataSpot: WisataSpot | null = useMemo(
     () => (isWisata && rawSlug ? (WISATA.find((w) => w.slug === rawSlug) ?? null) : null),
     [isWisata, rawSlug],
   );
 
-  const pin = product ?? wisataSpot;
+  const pin = isPosko ? POSKO : (product ?? wisataSpot);
 
   useEffect(() => {
     if (!map || !isLoaded) return;
     if (pin) {
-      const html = product ? popupHTML(product) : wisataPopupHTML(wisataSpot!);
+      const html = isPosko
+        ? poskoPopupHTML()
+        : product
+          ? popupHTML(product)
+          : wisataPopupHTML(wisataSpot!);
       popup.setHTML(html).setLngLat([pin.lng, pin.lat]);
       if (!popup.isOpen()) popup.addTo(map);
       stylePopup(popup);
@@ -354,6 +387,40 @@ export default function UmkmMap({
           </MapMarker>
         );
       })}
+
+      {/* Posko marker — star/home pin, gold */}
+      {(() => {
+        const isSelected = selectedSlug === "posko";
+        return (
+          <MapMarker
+            longitude={POSKO.lng}
+            latitude={POSKO.lat}
+            onClick={() => onMarkerClick("posko")}
+          >
+            <MarkerContent>
+              <svg
+                width={isSelected ? 38 : 32}
+                height={isSelected ? 48 : 40}
+                viewBox="0 0 32 40"
+                fill="none"
+                className="transition-all duration-200 drop-shadow-lg"
+              >
+                <path
+                  d="M16 0C8.268 0 2 6.268 2 14c0 9.333 14 26 14 26S30 23.333 30 14C30 6.268 23.732 0 16 0z"
+                  fill={isSelected ? "#c0392b" : "#b8860b"}
+                  stroke="#fff"
+                  strokeWidth="2"
+                />
+                {/* Star shape */}
+                <polygon
+                  points="16,7 17.8,12.5 23.5,12.5 19,16 20.8,21.5 16,18 11.2,21.5 13,16 8.5,12.5 14.2,12.5"
+                  fill={isSelected ? "#fff" : "#fff"}
+                />
+              </svg>
+            </MarkerContent>
+          </MapMarker>
+        );
+      })()}
     </Map>
   );
 }
