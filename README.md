@@ -10,8 +10,8 @@ This monorepo contains two separate Next.js applications deployed to their respe
 
 | App | Domain | Description |
 |-----|--------|-------------|
-| `apps/main` | `balerejo.desa.id` | Village profile - Beranda, Profil Desa, Infografis, Galeri |
-| `apps/umkm` | `umkm.balerejo.desa.id` | Jelajah Balerejo - UMKM catalog, Peta Digital |
+| `apps/main` | `balerejo.com` | Village profile - Beranda, Profil Desa, Infografis, Galeri |
+| `apps/umkm` | `umkm.balerejo.com` | Jelajah Balerejo - UMKM catalog, Peta Digital |
 
 ## Packages
 
@@ -84,14 +84,14 @@ cd apps/umkm && npm run dev
 ```txt
 balerejo-web/
 ├── apps/
-│   ├── main/                   # balerejo.desa.id
+│   ├── main/                   # balerejo.com
 │   │   ├── src/
 │   │   │   ├── app/            # Pages (Beranda, Profil Desa, Infografis, Galeri)
 │   │   │   └── components/     # Navbar, Footer, sections
 │   │   ├── public/
 │   │   ├── next.config.ts
 │   │   └── package.json
-│   └── umkm/                   # umkm.balerejo.desa.id
+│   └── umkm/                   # umkm.balerejo.com
 │       ├── src/
 │       │   ├── app/            # Pages (/, /[slug], /peta-digital)
 │       │   ├── components/     # NavbarJelajah, FooterJelajah, UmkmMap
