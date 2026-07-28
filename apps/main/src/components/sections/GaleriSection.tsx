@@ -3,24 +3,24 @@ import Image from "next/image";
 const ITEMS = [
   {
     id: 1,
-    caption: "Panorama Pagi Desa",
+    caption: "Suasana Desa Balerejo di Sore Hari",
     description:
-      "Pemandangan pagi dari ketinggian memperlihatkan hamparan lembah hijau Desa Balerejo dengan siluet gunung di kejauhan dan langit fajar yang memukau.",
+      "Panorama sore dari ketinggian memperlihatkan hamparan lembah hijau Desa Balerejo dengan siluet gunung di kejauhan dan langit senja yang memukau.",
     src: "/images/panorama-pagi.jpg",
   },
   {
     id: 2,
-    caption: "Pantai Selatan Balerejo",
+    caption: "Pantai Sekargadung",
     description:
-      "Garis pantai berbatu di pesisir selatan Balerejo dengan deburan ombak Samudra Hindia dan tebing hijau yang menjadi ciri khas keindahan alam kawasan ini.",
-    src: "/images/pantai-selatan.jpg",
+      "Garis pantai berbatu Pantai Sekargadung dengan deburan ombak Samudra Hindia dan tebing hijau yang menjadi ciri khas keindahan alam pesisir selatan Balerejo.",
+    src: "/images/pantai-sekargadung.jpg",
   },
   {
     id: 3,
-    caption: "Kebun Tomat Desa",
+    caption: "Kebun Cabai Desa",
     description:
-      "Hamparan kebun tomat warga Balerejo yang dikelola dengan teknik mulsa plastik. Pertanian hortikultura menjadi salah satu mata pencaharian utama warga desa.",
-    src: "/images/kebun-tomat.jpg",
+      "Hamparan kebun cabai warga Balerejo yang dikelola dengan teknik mulsa plastik. Budidaya cabai menjadi salah satu mata pencaharian hortikultura utama warga desa.",
+    src: "/images/kebun-cabe.jpg",
   },
   {
     id: 4,
@@ -31,16 +31,16 @@ const ITEMS = [
   },
   {
     id: 5,
-    caption: "Gerbang Desa Balerejo",
+    caption: "Masuk Desa Balerejo",
     description:
-      "Gerbang selamat datang Desa Balerejo yang kokoh menjadi penanda batas wilayah sekaligus identitas kebanggaan warga yang menandai pintu masuk desa.",
+      "Gerbang masuk Desa Balerejo yang kokoh menjadi penanda batas wilayah sekaligus identitas kebanggaan warga yang menyambut setiap pengunjung yang datang.",
     src: "/images/gerbang-desa.jpg",
   },
   {
     id: 6,
-    caption: "Jalan Utama Desa",
+    caption: "Pemukiman Desa Balerejo",
     description:
-      "Jalan utama Desa Balerejo yang menghubungkan berbagai dusun dengan deretan rumah warga di kanan kiri, menjadi urat nadi mobilitas sehari-hari.",
+      "Deretan rumah warga Desa Balerejo yang tertata di sepanjang jalan desa, mencerminkan kehidupan masyarakat yang rukun dan lingkungan yang asri.",
     src: "/images/jalan-desa.jpg",
   },
   {
@@ -52,9 +52,9 @@ const ITEMS = [
   },
   {
     id: 8,
-    caption: "Candi Balerejo",
+    caption: "Pendanyangan Kucur Lamtaran",
     description:
-      "Struktur candi batu bersejarah yang berdiri kokoh di bawah naungan pohon rindang, menjadi bukti kekayaan warisan budaya dan sejarah Desa Balerejo.",
+      "Situs candi batu bersejarah di Desa Balerejo yang berdiri kokoh di bawah naungan pohon rindang, menjadi destinasi wisata sejarah dan budaya yang berharga.",
     src: "/images/candi-balerejo.jpg",
   },
   {
@@ -68,14 +68,14 @@ const ITEMS = [
     id: 10,
     caption: "Budidaya Cabai",
     description:
-      "Tanaman cabai muda yang tumbuh pada lahan dengan sistem tanam teratur. Budidaya cabai menjadi usaha pertanian yang banyak digeluti warga Balerejo.",
+      "Bibit cabai muda yang ditopang ajir bambu pada lahan dengan sistem tanam teratur. Budidaya cabai menjadi usaha pertanian yang banyak digeluti warga Balerejo.",
     src: "/images/budidaya-cabai.jpg",
   },
   {
     id: 11,
-    caption: "Batuan Pantai Selatan",
+    caption: "Air Pantai Sekargadung",
     description:
-      "Hamparan batu andesit alami di pantai selatan dengan air jernih di sela-selanya, membentuk lanskap unik pesisir Balerejo yang belum banyak dikenal.",
+      "Hamparan batuan alami di bibir pantai Sekargadung dengan air jernih yang menggenang di sela-selanya, membentuk lanskap unik pesisir selatan Balerejo.",
     src: "/images/batuan-pantai.jpg",
   },
   {
@@ -96,7 +96,7 @@ function GalleryCard({ caption, description, src }: { caption: string; descripti
             src={src}
             alt={caption}
             fill
-            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            className="object-cover scale-[1.12] group-hover:scale-[1.15] transition-transform duration-500"
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
         )}
