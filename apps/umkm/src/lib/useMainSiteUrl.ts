@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 /**
  * Returns the base domain by stripping the "umkm." subdomain prefix.
- * e.g. umkm.balerejo.desa.id  → https://balerejo.desa.id
+ * e.g. umkm.balerejo.com  → https://balerejo.com
  *      umkm.foo.example.com   → https://foo.example.com
  * Falls back to localhost:3000 in dev (port 3001 → 3000).
  */

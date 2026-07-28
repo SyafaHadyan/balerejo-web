@@ -18,7 +18,7 @@ const sourceSans = Source_Sans_3({
   preload: false,
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://balerejo.desa.id";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://balerejo.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
