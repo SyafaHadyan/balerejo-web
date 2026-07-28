@@ -77,7 +77,7 @@ const SOCIAL_LINKS = [
     id: "facebook",
     label: "Facebook",
     handle: "Desa Balerejo",
-    href: "#",
+    href: "https://web.facebook.com/desaku.balerejo",
     icon: <FacebookIcon size={20} />,
   },
   {
