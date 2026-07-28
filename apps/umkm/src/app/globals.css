@@ -15,6 +15,12 @@
   }
 }
 
+/* Wisata gallery — text fade-up entrance */
+@keyframes wisata-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Wisata gallery — auto-play progress bar */
 @keyframes wisata-progress {
   from { transform: scaleX(0); }
