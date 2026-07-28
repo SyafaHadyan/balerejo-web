@@ -8,9 +8,7 @@ const NAV_LINKS = [
 ] as const;
 
 export default function Footer() {
-  const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+62 812-3456-7891";
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hi@balerejo.desa.id";
-  const telHref = `tel:${phone.replace(/[\s]/g, "")}`;
+  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "desabalerejo1@gmail.com";
 
   return (
     <footer className="bg-primary p-5 flex flex-col gap-3 rounded-t-[8px]" aria-label="Footer">
@@ -47,12 +45,6 @@ export default function Footer() {
             Kontak
           </p>
           <div className="flex flex-col leading-[1.6]">
-            <a
-              href={telHref}
-              className="font-sans text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-200"
-            >
-              {phone}
-            </a>
             <a
               href={`mailto:${email}`}
               className="font-sans text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-200"

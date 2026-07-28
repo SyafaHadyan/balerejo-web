@@ -10,9 +10,7 @@ const NAV_LINKS = [
 ] as const;
 
 export default function FooterJelajah() {
-  const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+62 812-3456-7891";
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hi@balerejo.desa.id";
-  const telHref = `tel:${phone.replace(/[\s]/g, "")}`;
+  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "desabalerejo1@gmail.com";
   const mainSiteUrl = useMainSiteUrl();
 
   return (
@@ -54,12 +52,6 @@ export default function FooterJelajah() {
         <div className="flex flex-col gap-[7px]">
           <p className="font-sans text-[14px] text-accent leading-[1.6]">Kontak</p>
           <div className="flex flex-col leading-[1.6]">
-            <a
-              href={telHref}
-              className="font-sans text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-200"
-            >
-              {phone}
-            </a>
             <a
               href={`mailto:${email}`}
               className="font-sans text-[15px] text-[#bfbfbf] hover:text-white transition-colors duration-200"

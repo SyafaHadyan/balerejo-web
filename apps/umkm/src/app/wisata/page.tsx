@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import NavbarJelajah from "@/components/NavbarJelajah";
-import WisataHeroSection from "@/components/sections/WisataHeroSection";
-import WisataGridSection from "@/components/sections/WisataGridSection";
+import WisataGallerySection from "@/components/sections/WisataGallerySection";
 import FooterJelajah from "@/components/FooterJelajah";
 
 export const metadata: Metadata = {
   title: "Wisata",
   description:
-    "Jelajahi destinasi wisata alam sekitar Desa Balerejo — air terjun tersembunyi, pantai selatan Blitar, dan goa alam yang menakjubkan.",
+    "Jelajahi destinasi wisata alam sekitar Desa Balerejo — sumber air, dam, taman, dan pantai selatan Blitar.",
   openGraph: {
     title: "Wisata — Jelajah Balerejo",
     description:
-      "Jelajahi destinasi wisata alam sekitar Desa Balerejo — air terjun tersembunyi, pantai selatan Blitar, dan goa alam yang menakjubkan.",
+      "Jelajahi destinasi wisata alam sekitar Desa Balerejo — sumber air, dam, taman, dan pantai selatan Blitar.",
   },
 };
 
@@ -20,8 +19,7 @@ export default function WisataPage() {
     <>
       <NavbarJelajah activePage="wisata" />
       <main>
-        <WisataHeroSection />
-        <WisataGridSection />
+        <WisataGallerySection />
       </main>
       <FooterJelajah />
     </>

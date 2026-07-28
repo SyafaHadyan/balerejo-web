@@ -5,14 +5,9 @@ test.describe("Footer", () => {
     await page.goto("/");
   });
 
-  test("shows contact phone number", async ({ page }) => {
-    const footer = page.getByRole("contentinfo");
-    await expect(footer.getByRole("link", { name: /\+62/ })).toBeVisible();
-  });
-
   test("shows contact email", async ({ page }) => {
     const footer = page.getByRole("contentinfo");
-    await expect(footer.getByRole("link", { name: /balerejo\.desa\.id/i })).toBeVisible();
+    await expect(footer.getByRole("link", { name: /desabalerejo1@gmail\.com/i })).toBeVisible();
   });
 
   test("shows copyright", async ({ page }) => {
