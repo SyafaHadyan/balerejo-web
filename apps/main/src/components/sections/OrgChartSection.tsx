@@ -156,13 +156,28 @@ function TreeNode({ name, role, isRoot = false }: Person & { isRoot?: boolean })
   );
 }
 
-/* Bungkus sekelompok TreeNode dengan garis pemandu vertikal di kiri —
-   menandai bahwa semuanya adalah anak dari node yang sama di atasnya.
-   Bisa disarangkan (Kaur di dalam Sekretaris di dalam Kepala Desa). */
+/* Bungkus sekelompok TreeNode dengan garis pemandu vertikal di kiri.
+   Setiap anak mendapat segmennya sendiri sehingga garis berhenti tepat
+   di titik tengah anak terakhir (bukan di bagian bawah kontainer). */
 function TreeChildren({ children }: { children: React.ReactNode }) {
+  const items = React.Children.toArray(children);
   return (
-    <div className="flex flex-col border-l-2 ml-[17px] pl-[3px]" style={{ borderColor: SEP }}>
-      {children}
+    <div className="ml-[17px] pl-[3px] flex flex-col">
+      {items.map((child, i) => (
+        <div key={i} className="relative">
+          <div
+            className="absolute w-[2px]"
+            style={{
+              backgroundColor: SEP,
+              left: -3,
+              top: 0,
+              bottom: i === items.length - 1 ? "50%" : 0,
+            }}
+            aria-hidden="true"
+          />
+          {child}
+        </div>
+      ))}
     </div>
   );
 }
