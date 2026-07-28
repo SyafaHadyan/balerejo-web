@@ -19,7 +19,7 @@ const sourceSans = Source_Sans_3({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://umkm.balerejo.desa.id";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://umkm.balerejo.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
