@@ -31,7 +31,7 @@ const KAMITUWO = [
 
 type Person = { name: string; role: string };
 
-function VLine({ h = 28 }: { h?: number }) {
+function VLine({ h = 18 }: { h?: number }) {
   return (
     <div
       className="w-[3px] shrink-0"
@@ -43,13 +43,13 @@ function VLine({ h = 28 }: { h?: number }) {
 
 function OrgCard({ name, role }: Person) {
   return (
-    <div className="bg-surface border border-divider rounded-[11px] w-[220px] flex flex-col items-center gap-[11px] px-[13px] py-[19px] shrink-0 overflow-hidden">
-      <div className="w-[53px] h-[53px] rounded-full bg-accent/30 shrink-0" />
-      <div className="flex flex-col items-center gap-[7px] text-center">
-        <p className="font-heading font-bold text-[17px] leading-[1.3] text-primary">
+    <div className="bg-surface border border-divider rounded-[10px] w-[190px] flex flex-col items-center gap-[8px] px-[12px] py-[14px] shrink-0 overflow-hidden">
+      <div className="w-[44px] h-[44px] rounded-full bg-accent/30 shrink-0" />
+      <div className="flex flex-col items-center gap-[5px] text-center">
+        <p className="font-heading font-bold text-[15px] leading-[1.3] text-primary">
           {name}
         </p>
-        <p className="font-sans text-[14px] leading-[1.5] text-primary">
+        <p className="font-sans text-[13px] leading-[1.4] text-primary">
           {role}
         </p>
       </div>
@@ -80,7 +80,7 @@ function BranchGroup({ items }: { items: React.ReactNode[] }) {
               aria-hidden="true"
             />
           )}
-          <VLine h={22} />
+          <VLine h={14} />
           {content}
         </div>
       ))}
@@ -103,10 +103,10 @@ function BranchRow({ items }: { items: React.ReactNode[] }) {
 /* 3 Kasi bertumpuk vertikal — satu kelompok/cabang. */
 function KasiStack() {
   return (
-    <div className="flex flex-col items-center gap-[10px]">
+    <div className="flex flex-col items-center gap-[6px]">
       {KASI.map((p, i) => (
         <React.Fragment key={p.name}>
-          {i > 0 && <VLine h={10} />}
+          {i > 0 && <VLine h={6} />}
           <OrgCard {...p} />
         </React.Fragment>
       ))}
@@ -206,7 +206,7 @@ function MobileTree() {
 
 export default function OrgChartSection() {
   return (
-    <section className="px-5 md:px-[106px] py-[53px] flex flex-col gap-[40px]" aria-label="Struktur pemerintahan">
+    <section className="px-5 md:px-[60px] py-[32px] flex flex-col gap-[24px]" aria-label="Struktur pemerintahan">
       <h2 className="font-heading font-bold text-[35px] leading-[1.3] text-primary">
         Struktur Pemerintahan
       </h2>
