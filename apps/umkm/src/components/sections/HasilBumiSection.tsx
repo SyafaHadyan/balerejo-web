@@ -22,7 +22,7 @@ export default function HasilBumiSection() {
 
         {/* grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {HASIL_BUMI.map(({ name, category, description }) => (
+          {HASIL_BUMI.map(({ name, category, luas, hasil, description }) => (
             <div
               key={name}
               className="bg-white border-[1.5px] border-divider rounded-[16px] p-6 flex flex-col gap-3"
@@ -33,6 +33,16 @@ export default function HasilBumiSection() {
               <p className="font-heading font-bold text-[20px] text-primary leading-[1.3]">
                 {name}
               </p>
+              <div className="flex gap-4">
+                <div className="flex flex-col gap-[2px]">
+                  <span className="font-sans text-[11px] text-muted">Luas</span>
+                  <span className="font-sans font-semibold text-[13px] text-primary">{luas}</span>
+                </div>
+                <div className="flex flex-col gap-[2px]">
+                  <span className="font-sans text-[11px] text-muted">Hasil</span>
+                  <span className="font-sans font-semibold text-[13px] text-primary">{hasil}</span>
+                </div>
+              </div>
               <p className="font-sans text-[14px] text-muted leading-[1.6]">
                 {description}
               </p>
