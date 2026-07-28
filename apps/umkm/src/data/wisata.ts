@@ -1,7 +1,7 @@
 export interface WisataSpot {
   slug: string;
   name: string;
-  type: "pantai" | "dam" | "taman" | "sumber";
+  type: "pantai" | "dam" | "taman" | "candi";
   description: string;
   address: string;
   /** Rp-formatted string or "Gratis". null = unknown */
@@ -15,9 +15,9 @@ export const WISATA: WisataSpot[] = [
   {
     slug: "pendanyangan-kucur-lamtaran",
     name: "Pendanyangan Kucur Lamtaran",
-    type: "sumber",
+    type: "candi",
     description:
-      "Sumber mata air alami yang mengalir jernih di kawasan Balerejo. Tempat yang asri dan menenangkan, cocok untuk menikmati suasana alam pedesaan yang masih asli.",
+      "Situs candi batu bersejarah yang berdiri kokoh di bawah naungan pohon rindang di Desa Balerejo. Menjadi destinasi wisata budaya yang menyimpan kekayaan sejarah lokal.",
     address: "Desa Balerejo, Kec. Panggungrejo, Kab. Blitar",
     htm: null,
     image: "/images/wisata/pendanyangan-kucur-lamtaran.jpg",

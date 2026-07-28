@@ -20,7 +20,7 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   pantai: "PANTAI",
   dam: "DAM",
   taman: "TAMAN",
-  sumber: "SUMBER AIR",
+  candi: "CANDI",
 };
 
 /* MapLibre requires browser APIs — disable SSR */

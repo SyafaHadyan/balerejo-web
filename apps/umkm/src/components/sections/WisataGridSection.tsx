@@ -5,7 +5,7 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   pantai: "PANTAI",
   dam: "DAM",
   taman: "TAMAN",
-  sumber: "SUMBER AIR",
+  candi: "CANDI",
 };
 
 function WisataCard({ name, type, description, address, htm, image }: WisataSpot) {
@@ -17,7 +17,7 @@ function WisataCard({ name, type, description, address, htm, image }: WisataSpot
           src={image}
           alt={name}
           fill
-          className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+          className="object-cover scale-[1.12] group-hover:scale-[1.15] transition-transform duration-300"
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
         {/* type badge over image */}
