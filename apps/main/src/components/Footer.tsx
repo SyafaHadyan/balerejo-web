@@ -8,7 +8,7 @@ const NAV_LINKS = [
 ] as const;
 
 export default function Footer() {
-  const email = "desabalerejo1@gmail.com";
+  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "desabalerejo1@gmail.com";
 
   return (
     <footer className="bg-primary p-5 flex flex-col gap-3 rounded-t-[8px]" aria-label="Footer">
