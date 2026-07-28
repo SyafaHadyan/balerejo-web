@@ -37,11 +37,21 @@ function TiktokIcon({ size = 24 }: { size?: number }) {
   );
 }
 
-function YoutubeIcon({ size = 24 }: { size?: number }) {
+function FacebookIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="2" y="5" width="20" height="14" rx="4" fill="#FF0000"/>
-      <path d="M10 9.5l5 2.5-5 2.5V9.5Z" fill="white"/>
+      <rect width="24" height="24" rx="6" fill="#1877F2"/>
+      <path d="M13.5 12.5h2l.4-2.5H13.5V8.5c0-.7.3-1.3 1.3-1.3H16V5s-.9-.1-1.8-.1c-2.1 0-3.2 1.2-3.2 3.2v1.9H9v2.5h2V19h2.5v-6.5Z" fill="white"/>
+    </svg>
+  );
+}
+
+function EmailIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="24" height="24" rx="6" fill="#1D392B"/>
+      <path d="M5 8.5l7 5 7-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="4" y="7" width="16" height="11" rx="2" stroke="white" strokeWidth="1.5"/>
     </svg>
   );
 }
@@ -52,23 +62,30 @@ const SOCIAL_LINKS = [
   {
     id: "instagram",
     label: "Instagram",
-    handle: "@desabalerejo.official",
-    href: "https://instagram.com/desabalerejo.official",
+    handle: "@desabalerejo_panggungrejo",
+    href: "https://instagram.com/desabalerejo_panggungrejo",
     icon: <InstagramIcon size={20} />,
   },
   {
     id: "tiktok",
     label: "TikTok",
-    handle: "@desabalerejo",
-    href: "https://tiktok.com/@desabalerejo",
+    handle: "@desa_balerejo",
+    href: "https://tiktok.com/@desa_balerejo",
     icon: <TiktokIcon size={20} />,
   },
   {
-    id: "youtube",
-    label: "YouTube",
-    handle: "Desa Balerejo Official",
-    href: "https://youtube.com/@DesaBalerejoPanggungrejo",
-    icon: <YoutubeIcon size={20} />,
+    id: "facebook",
+    label: "Facebook",
+    handle: "Desa Balerejo",
+    href: "#",
+    icon: <FacebookIcon size={20} />,
+  },
+  {
+    id: "email",
+    label: "Email",
+    handle: "desabalerejo1@gmail.com",
+    href: "mailto:desabalerejo1@gmail.com",
+    icon: <EmailIcon size={20} />,
   },
 ] as const;
 
