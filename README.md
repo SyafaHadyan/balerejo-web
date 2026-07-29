@@ -22,6 +22,8 @@ Official web presence for Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blita
 | Main (`balerejo.com`) | [![balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnsw.svg)](https://uptime.betterstack.com/?utm_source=status_badge) |
 | UMKM (`umkm.balerejo.com`) | [![umkm.balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnt1.svg)](https://uptime.betterstack.com/?utm_source=status_badge) |
 
+Status page: [status.balerejo.com](https://status.balerejo.com)
+
 This monorepo contains two separate Next.js applications deployed to their respective subdomains, along with a shared package for common components.
 
 ---
