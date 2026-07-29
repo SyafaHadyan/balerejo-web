@@ -10,15 +10,6 @@ export interface HasilBumiItem {
 export const HASIL_BUMI: HasilBumiItem[] = [
   // ─── With images ─────────────────────────────────────────────────────────
   {
-    name: "Kubis",
-    category: "Tanaman Pangan",
-    luas: "352 Ha",
-    hasil: "6 Ton/Ha",
-    description:
-      "Sayuran kubis tumbuh subur di lahan pertanian Balerejo. Hasil panennya dipasarkan ke pasar-pasar sekitar dan menjadi konsumsi sehari-hari warga.",
-    image: "/images/hasil-bumi/kubis.jpg",
-  },
-  {
     name: "Cabe",
     category: "Tanaman Pangan",
     luas: "52 Ha",
@@ -101,6 +92,14 @@ export const HASIL_BUMI: HasilBumiItem[] = [
   },
 
   // ─── Without images ───────────────────────────────────────────────────────
+  {
+    name: "Kubis",
+    category: "Tanaman Pangan",
+    luas: "352 Ha",
+    hasil: "6 Ton/Ha",
+    description:
+      "Sayuran kubis tumbuh subur di lahan pertanian Balerejo. Hasil panennya dipasarkan ke pasar-pasar sekitar dan menjadi konsumsi sehari-hari warga.",
+  },
   {
     name: "Kacang Kedelai",
     category: "Tanaman Pangan",
