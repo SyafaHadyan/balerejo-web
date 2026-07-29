@@ -9,6 +9,7 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   dam: "DAM",
   taman: "TAMAN",
   candi: "CANDI",
+  air_terjun: "AIR TERJUN",
 };
 
 const AUTOPLAY_MS = 6000;

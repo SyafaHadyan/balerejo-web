@@ -21,6 +21,7 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   dam: "DAM",
   taman: "TAMAN",
   candi: "CANDI",
+  air_terjun: "AIR TERJUN",
 };
 
 /* MapLibre requires browser APIs — disable SSR */
@@ -111,7 +112,7 @@ function ProductCard({
         <p className="text-[11px] font-semibold text-[#37644d] tracking-[0.5px]">
           {product.category}
         </p>
-        <p className="text-[12px] font-semibold text-[#1D392B] mt-0.5">{product.price}</p>
+        <p className="text-[12px] font-semibold text-[#1D392B] mt-0.5">Mulai dari {product.price}</p>
         <p className="text-[11px] text-[#888] leading-[1.4] line-clamp-2 mt-0.5">
           {product.address}
         </p>

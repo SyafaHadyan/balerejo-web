@@ -1,7 +1,7 @@
 export interface WisataSpot {
   slug: string;
   name: string;
-  type: "pantai" | "dam" | "taman" | "candi";
+  type: "pantai" | "dam" | "taman" | "candi" | "air_terjun";
   description: string;
   address: string;
   /** Rp-formatted string or "Gratis". null = unknown */
@@ -12,6 +12,18 @@ export interface WisataSpot {
 }
 
 export const WISATA: WisataSpot[] = [
+  {
+    slug: "pantai-sekar-gadung",
+    name: "Pantai Sekar Gadung",
+    type: "pantai",
+    description:
+      "Pantai di pesisir selatan Blitar dengan ombak khas Samudra Hindia. Suasana alami yang masih sepi menjadikannya destinasi yang tenang dan cocok untuk menikmati keindahan pantai selatan.",
+    address: "Kec. Panggungrejo, Kab. Blitar",
+    htm: null,
+    image: "/images/wisata/pantai-sekar-gadung.jpg",
+    lat: -8.3351642,
+    lng: 112.2984535,
+  },
   {
     slug: "pendanyangan-kucur-lamtaran",
     name: "Pendanyangan Kucur Lamtaran",
@@ -49,15 +61,15 @@ export const WISATA: WisataSpot[] = [
     lng: 112.2999297,
   },
   {
-    slug: "pantai-sekar-gadung",
-    name: "Pantai Sekar Gadung",
-    type: "pantai",
+    slug: "air-terjun-grenjeng",
+    name: "Air Terjun Grenjeng",
+    type: "air_terjun",
     description:
-      "Pantai di pesisir selatan Blitar dengan ombak khas Samudra Hindia. Suasana alami yang masih sepi menjadikannya destinasi yang tenang dan cocok untuk menikmati keindahan pantai selatan.",
+      "Air terjun tersembunyi di antara lebatnya hutan sekitar Desa Balerejo. Suasana sejuk dan alami menjadikannya destinasi wisata alam yang menyegarkan jauh dari keramaian.",
     address: "Kec. Panggungrejo, Kab. Blitar",
     htm: null,
-    image: "/images/wisata/pantai-sekar-gadung.jpg",
-    lat: -8.3351642,
-    lng: 112.2984535,
+    image: "/images/wisata/air-terjun-grenjeng.jpg",
+    lat: -8.2578581,
+    lng: 112.285778,
   },
 ];
