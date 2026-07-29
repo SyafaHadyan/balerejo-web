@@ -44,7 +44,7 @@ function VLine({ h = 18 }: { h?: number }) {
 function AvatarPlaceholder({ size }: { size: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 44 44" fill="none" aria-hidden="true" className="shrink-0 rounded-full">
-      <circle cx="22" cy="22" r="22" fill="#1D392B" />
+      <circle cx="22" cy="22" r="22" fill="#DCBe82" />
       <circle cx="22" cy="17" r="8" fill="white" />
       <ellipse cx="22" cy="36" rx="13" ry="9" fill="white" />
     </svg>
