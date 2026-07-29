@@ -2,7 +2,10 @@
 
 Official web presence for Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blitar, Jawa Timur. Built as part of MMD FILKOM Universitas Brawijaya 2026, Kelompok 46.
 
-Main site (balerejo.com) [![balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnsw.svg)](https://uptime.betterstack.com/?utm_source=status_badge) | UMKM site (umkm.balerejo.com) [![umkm.balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnt1.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
+| Site | Uptime |
+|------|--------|
+| Main (`balerejo.com`) | [![balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnsw.svg)](https://uptime.betterstack.com/?utm_source=status_badge) |
+| UMKM (`umkm.balerejo.com`) | [![umkm.balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnt1.svg)](https://uptime.betterstack.com/?utm_source=status_badge) |
 
 This monorepo contains two separate Next.js applications deployed to their respective subdomains, along with a shared package for common components.
 
