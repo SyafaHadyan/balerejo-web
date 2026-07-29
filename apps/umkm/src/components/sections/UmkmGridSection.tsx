@@ -20,7 +20,7 @@ function ProductCard({ slug, name, price, image }: Pick<Product, "slug" | "name"
       </div>
       <div className="flex flex-col gap-2 p-5">
         <p className="font-heading font-bold text-[18px] text-primary leading-[1.3]">{name}</p>
-        <p className="font-sans font-semibold text-[16px] text-[#37644d]">{price}</p>
+        <p className="font-sans font-semibold text-[16px] text-[#37644d]">Mulai dari {price}</p>
       </div>
     </Link>
   );

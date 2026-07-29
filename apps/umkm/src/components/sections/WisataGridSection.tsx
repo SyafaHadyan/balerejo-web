@@ -6,6 +6,7 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   dam: "DAM",
   taman: "TAMAN",
   candi: "CANDI",
+  air_terjun: "AIR TERJUN",
 };
 
 function WisataCard({ name, type, description, address, htm, image }: WisataSpot) {

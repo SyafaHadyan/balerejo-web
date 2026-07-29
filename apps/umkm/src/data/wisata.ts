@@ -1,7 +1,7 @@
 export interface WisataSpot {
   slug: string;
   name: string;
-  type: "pantai" | "dam" | "taman" | "candi";
+  type: "pantai" | "dam" | "taman" | "candi" | "air_terjun";
   description: string;
   address: string;
   /** Rp-formatted string or "Gratis". null = unknown */
@@ -47,6 +47,18 @@ export const WISATA: WisataSpot[] = [
     image: "/images/wisata/taman-belik-gedhe.jpg",
     lat: -8.251522,
     lng: 112.2999297,
+  },
+  {
+    slug: "air-terjun-grenjeng",
+    name: "Air Terjun Grenjeng",
+    type: "air_terjun",
+    description:
+      "Air terjun tersembunyi di antara lebatnya hutan sekitar Desa Balerejo. Suasana sejuk dan alami menjadikannya destinasi wisata alam yang menyegarkan jauh dari keramaian.",
+    address: "Kec. Panggungrejo, Kab. Blitar",
+    htm: null,
+    image: "/images/wisata/air-terjun-grenjeng.jpg",
+    lat: -8.2578581,
+    lng: 112.285778,
   },
   {
     slug: "pantai-sekar-gadung",

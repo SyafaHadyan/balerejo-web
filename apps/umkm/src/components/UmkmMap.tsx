@@ -17,6 +17,7 @@ const TYPE_LABEL: Record<WisataSpot["type"], string> = {
   dam: "DAM",
   taman: "TAMAN",
   candi: "CANDI",
+  air_terjun: "AIR TERJUN",
 };
 
 const POSKO = {
@@ -39,7 +40,7 @@ function popupHTML(product: Product): string {
   return `
     <div style="display:flex;flex-direction:column;gap:6px;padding:14px;width:210px;font-family:sans-serif;box-sizing:border-box;">
       <p style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:14px;color:#1D392B;line-height:1.3;margin:0;padding-right:22px;">${product.name}</p>
-      <p style="font-size:12px;font-weight:600;color:#37644d;margin:0;">${product.price}</p>
+      <p style="font-size:12px;font-weight:600;color:#37644d;margin:0;">Mulai dari ${product.price}</p>
       <p style="font-size:11px;color:#61665e;line-height:1.5;margin:0;">${product.address}</p>
       <div style="display:flex;gap:6px;margin-top:6px;">
         <a href="${detailUrl}"

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import NavbarJelajah from "@/components/NavbarJelajah";
 import WisataGallerySection from "@/components/sections/WisataGallerySection";
-import FooterJelajah from "@/components/FooterJelajah";
 
 export const metadata: Metadata = {
   title: "Wisata",
@@ -21,7 +20,6 @@ export default function WisataPage() {
       <main>
         <WisataGallerySection />
       </main>
-      <FooterJelajah />
     </>
   );
 }
