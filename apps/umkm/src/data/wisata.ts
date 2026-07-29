@@ -13,6 +13,18 @@ export interface WisataSpot {
 
 export const WISATA: WisataSpot[] = [
   {
+    slug: "pantai-sekar-gadung",
+    name: "Pantai Sekar Gadung",
+    type: "pantai",
+    description:
+      "Pantai di pesisir selatan Blitar dengan ombak khas Samudra Hindia. Suasana alami yang masih sepi menjadikannya destinasi yang tenang dan cocok untuk menikmati keindahan pantai selatan.",
+    address: "Kec. Panggungrejo, Kab. Blitar",
+    htm: null,
+    image: "/images/wisata/pantai-sekar-gadung.jpg",
+    lat: -8.3351642,
+    lng: 112.2984535,
+  },
+  {
     slug: "pendanyangan-kucur-lamtaran",
     name: "Pendanyangan Kucur Lamtaran",
     type: "candi",
@@ -59,17 +71,5 @@ export const WISATA: WisataSpot[] = [
     image: "/images/wisata/air-terjun-grenjeng.jpg",
     lat: -8.2578581,
     lng: 112.285778,
-  },
-  {
-    slug: "pantai-sekar-gadung",
-    name: "Pantai Sekar Gadung",
-    type: "pantai",
-    description:
-      "Pantai di pesisir selatan Blitar dengan ombak khas Samudra Hindia. Suasana alami yang masih sepi menjadikannya destinasi yang tenang dan cocok untuk menikmati keindahan pantai selatan.",
-    address: "Kec. Panggungrejo, Kab. Blitar",
-    htm: null,
-    image: "/images/wisata/pantai-sekar-gadung.jpg",
-    lat: -8.3351642,
-    lng: 112.2984535,
   },
 ];
