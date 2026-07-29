@@ -162,12 +162,13 @@ npx playwright install chromium webkit
 
 ### GitHub Actions
 
-Two workflows run on every push and pull request:
-
 | Workflow | Trigger | Jobs |
 |----------|---------|------|
-| `ci.yml` | Every push & PR | Type check, Lint, Build, Audit |
+| `ci.yml` | Every push & PR | Type check, Lint, Build |
+| `checks.yml` | Every push & PR | Bundle size, Spell check |
 | `e2e.yml` | Every push, PR & nightly | Playwright E2E tests |
+| `lighthouse.yml` | Every push & PR | Lighthouse CI (main & UMKM) |
+| `codeql.yml` | Every push, PR & weekly | CodeQL security analysis |
 
 ### Cloudflare Pages
 
@@ -196,6 +197,12 @@ Both applications are deployed as separate Cloudflare Pages projects from this r
 Set environment variables in each Cloudflare Pages project under **Settings > Environment Variables**. Use scope **All environments** to apply to both production and preview deployments.
 
 Refer to `apps/main/.env.example` and `apps/umkm/.env.example` for the complete list of variables.
+
+---
+
+## Security
+
+To report a vulnerability, see [SECURITY.md](SECURITY.md).
 
 ---
 
