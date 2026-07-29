@@ -10,6 +10,15 @@ export interface HasilBumiItem {
 export const HASIL_BUMI: HasilBumiItem[] = [
   // ─── With images ─────────────────────────────────────────────────────────
   {
+    name: "Tembakau",
+    category: "Perkebunan",
+    luas: "15 Ha",
+    hasil: "1,2 Ton/Ha",
+    description:
+      "Tembakau dibudidayakan sebagai tanaman perkebunan rakyat di Desa Balerejo. Daun tembakau dipanen dan dijual ke pengepul untuk kebutuhan industri rokok sekitar.",
+    image: "/images/hasil-bumi/tembakau.jpg",
+  },
+  {
     name: "Cabe",
     category: "Tanaman Pangan",
     luas: "52 Ha",
@@ -92,14 +101,6 @@ export const HASIL_BUMI: HasilBumiItem[] = [
   },
 
   // ─── Without images ───────────────────────────────────────────────────────
-  {
-    name: "Kubis",
-    category: "Tanaman Pangan",
-    luas: "352 Ha",
-    hasil: "6 Ton/Ha",
-    description:
-      "Sayuran kubis tumbuh subur di lahan pertanian Balerejo. Hasil panennya dipasarkan ke pasar-pasar sekitar dan menjadi konsumsi sehari-hari warga.",
-  },
   {
     name: "Kacang Kedelai",
     category: "Tanaman Pangan",
