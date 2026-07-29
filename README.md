@@ -2,6 +2,10 @@
 
 Official web presence for Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blitar, Jawa Timur. Built as part of MMD FILKOM Universitas Brawijaya 2026, Kelompok 46.
 
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/SyafaHadyan/balerejo-web)](https://github.com/SyafaHadyan/balerejo-web/commits/main)
+[![CI](https://github.com/SyafaHadyan/balerejo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/SyafaHadyan/balerejo-web/actions/workflows/ci.yml)
+
 | Site | Uptime |
 |------|--------|
 | Main (`balerejo.com`) | [![balerejo.com uptime](https://uptime.betterstack.com/status-badges/v1/monitor/2tnsw.svg)](https://uptime.betterstack.com/?utm_source=status_badge) |
