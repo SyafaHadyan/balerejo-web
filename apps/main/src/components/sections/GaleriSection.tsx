@@ -85,6 +85,13 @@ const ITEMS = [
       "Gereja Katolik Stasi St. Petrus Sekargadung, salah satu fasilitas ibadah warga Desa Balerejo yang mencerminkan kerukunan umat beragama di desa ini.",
     src: "/images/gereja-stasi.jpg",
   },
+  {
+    id: 13,
+    caption: "Air Terjun Grenjeng",
+    description:
+      "Air terjun tersembunyi di antara lebatnya hutan sekitar Desa Balerejo. Suasana sejuk dan alami menjadikannya destinasi wisata alam yang menyegarkan.",
+    src: "/images/air-terjun-grenjeng.jpg",
+  },
 ];
 
 function GalleryCard({ caption, description, src }: { caption: string; description: string; src: string }) {
