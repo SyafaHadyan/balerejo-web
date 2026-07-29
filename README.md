@@ -13,6 +13,9 @@ Official web presence for Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blita
 [![Node.js](https://img.shields.io/badge/Node.js-22-green?logo=node.js)](https://nodejs.org)
 [![npm](https://img.shields.io/badge/npm-11-red?logo=npm)](https://npmjs.com)
 [![Repo Size](https://img.shields.io/github/repo-size/SyafaHadyan/balerejo-web)](https://github.com/SyafaHadyan/balerejo-web)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-deployed-f38020?logo=cloudflare)](https://pages.cloudflare.com)
+[![Turbo](https://img.shields.io/badge/Turbo-monorepo-EF4444?logo=turborepo)](https://turbo.build)
+[![Playwright](https://img.shields.io/badge/Playwright-tested-45ba4b?logo=playwright)](https://playwright.dev)
 
 | Site | Uptime |
 |------|--------|
