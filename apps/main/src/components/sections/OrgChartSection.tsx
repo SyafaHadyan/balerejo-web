@@ -41,10 +41,20 @@ function VLine({ h = 18 }: { h?: number }) {
   );
 }
 
+function AvatarPlaceholder({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 44 44" fill="none" aria-hidden="true" className="shrink-0 rounded-full">
+      <circle cx="22" cy="22" r="22" fill="#DCBe82" />
+      <circle cx="22" cy="17" r="8" fill="white" />
+      <ellipse cx="22" cy="36" rx="13" ry="9" fill="white" />
+    </svg>
+  );
+}
+
 function OrgCard({ name, role }: Person) {
   return (
     <div className="bg-surface border border-divider rounded-[10px] w-[190px] flex flex-col items-center gap-[8px] px-[12px] py-[14px] shrink-0 overflow-hidden">
-      <div className="w-[44px] h-[44px] rounded-full bg-accent/30 shrink-0" />
+      <AvatarPlaceholder size={44} />
       <div className="flex flex-col items-center gap-[5px] text-center">
         <p className="font-heading font-bold text-[15px] leading-[1.3] text-primary">
           {name}
@@ -143,7 +153,7 @@ function TreeNode({ name, role, isRoot = false }: Person & { isRoot?: boolean })
           aria-hidden="true"
         />
       )}
-      <div className="w-9 h-9 rounded-full bg-accent/30 shrink-0 border-2 border-white ring-1 ring-divider" />
+      <AvatarPlaceholder size={36} />
       <div className="flex flex-col min-w-0">
         <span className="font-heading font-bold text-[13px] leading-[1.3] text-primary truncate">
           {name}
