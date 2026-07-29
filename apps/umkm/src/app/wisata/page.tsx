@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 
 export default function WisataPage() {
   return (
-    <>
+    <div className="h-screen overflow-hidden flex flex-col">
       <NavbarJelajah activePage="wisata" />
-      <main>
+      <main className="flex-1 overflow-hidden min-h-0">
         <WisataGallerySection />
       </main>
-    </>
+    </div>
   );
 }

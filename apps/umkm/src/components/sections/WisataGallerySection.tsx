@@ -83,7 +83,7 @@ export default function WisataGallerySection() {
   const animKey = `${activeIndex}-${resumeTick}`;
 
   return (
-    <section className="relative w-full h-[calc(100vh-58px)]" aria-label="Galeri wisata">
+    <section className="relative w-full h-full" aria-label="Galeri wisata">
       {/* Slide track */}
       <div
         ref={trackRef}
