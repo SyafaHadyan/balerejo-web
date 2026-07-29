@@ -140,8 +140,15 @@ function WisataCard({
           : "border-l-[5px] border-l-transparent hover:bg-[#f5f8f5]"
       }`}
     >
-      {/* Thumbnail — placeholder until user provides images */}
-      <div className="shrink-0 w-[60px] h-[60px] rounded-[8px] overflow-hidden bg-[#e0dfd1]" />
+      <div className="shrink-0 w-[60px] h-[60px] rounded-[8px] overflow-hidden bg-[#e0dfd1]">
+        <Image
+          src={spot.image}
+          alt={spot.name}
+          width={60}
+          height={60}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       <div className="flex flex-col gap-0.5 min-w-0">
         <p

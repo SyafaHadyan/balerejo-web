@@ -29,7 +29,7 @@ export const WISATA: WisataSpot[] = [
     name: "DAM Kehidupan",
     type: "dam",
     description:
-      "Bendungan yang menjadi sumber irigasi sawah warga sekitar. Pemandangan air tenang dengan latar hijau pedesaan menciptakan suasana damai dan menyejukkan.",
+      "Aliran air kecil yang mengalir tenang di antara hamparan hijau pedesaan. Tempat yang sederhana namun menenangkan, cocok untuk sejenak melepas penat dari kesibukan sehari-hari.",
     address: "Desa Balerejo, Kec. Panggungrejo, Kab. Blitar",
     htm: null,
     image: "/images/wisata/dam-kehidupan.jpg",
