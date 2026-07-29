@@ -5,6 +5,14 @@ Official web presence for Desa Balerejo, Kecamatan Panggungrejo, Kabupaten Blita
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/SyafaHadyan/balerejo-web)](https://github.com/SyafaHadyan/balerejo-web/commits/main)
 [![CI](https://github.com/SyafaHadyan/balerejo-web/actions/workflows/ci.yml/badge.svg)](https://github.com/SyafaHadyan/balerejo-web/actions/workflows/ci.yml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/SyafaHadyan/balerejo-web/pulls)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red.svg)](https://github.com/SyafaHadyan/balerejo-web)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
+[![Node.js](https://img.shields.io/badge/Node.js-22-green?logo=node.js)](https://nodejs.org)
+[![npm](https://img.shields.io/badge/npm-11-red?logo=npm)](https://npmjs.com)
+[![Repo Size](https://img.shields.io/github/repo-size/SyafaHadyan/balerejo-web)](https://github.com/SyafaHadyan/balerejo-web)
 
 | Site | Uptime |
 |------|--------|
