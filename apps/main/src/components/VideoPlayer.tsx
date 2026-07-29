@@ -39,7 +39,7 @@ export default function VideoPlayer() {
         preload="metadata"
         aria-hidden="true"
       >
-        <source src="/videos/hero-video.mp4" type="video/mp4" />
+        <source src="https://github.com/SyafaHadyan/balerejo-web/releases/download/v1.0-assets/hero-720p.mp4" type="video/mp4" />
       </video>
     </div>
   );
