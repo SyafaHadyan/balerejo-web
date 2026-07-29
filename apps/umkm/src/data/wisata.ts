@@ -25,18 +25,6 @@ export const WISATA: WisataSpot[] = [
     lng: 112.3009006,
   },
   {
-    slug: "dam-kehidupan",
-    name: "DAM Kehidupan",
-    type: "dam",
-    description:
-      "Aliran air kecil yang mengalir tenang di antara hamparan hijau pedesaan. Tempat yang sederhana namun menenangkan, cocok untuk sejenak melepas penat dari kesibukan sehari-hari.",
-    address: "Desa Balerejo, Kec. Panggungrejo, Kab. Blitar",
-    htm: null,
-    image: "/images/wisata/dam-kehidupan.jpg",
-    lat: -8.2990764,
-    lng: 112.3012041,
-  },
-  {
     slug: "sabuk-dam-balongrejo",
     name: "Sabuk DAM Balongrejo",
     type: "dam",
