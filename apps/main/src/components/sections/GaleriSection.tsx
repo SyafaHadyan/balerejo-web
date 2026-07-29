@@ -92,6 +92,13 @@ const ITEMS = [
       "Air terjun tersembunyi di antara lebatnya hutan sekitar Desa Balerejo. Suasana sejuk dan alami menjadikannya destinasi wisata alam yang menyegarkan.",
     src: "/images/air-terjun-grenjeng.jpg",
   },
+  {
+    id: 14,
+    caption: "Perbukitan Desa Balerejo",
+    description:
+      "Hamparan perbukitan hijau Desa Balerejo dengan cakrawala laut selatan yang membentang di kejauhan, memperlihatkan keindahan alam yang memukau.",
+    src: "/images/perbukitan-desa.jpg",
+  },
 ];
 
 function GalleryCard({ caption, description, src }: { caption: string; description: string; src: string }) {
