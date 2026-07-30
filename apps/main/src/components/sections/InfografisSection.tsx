@@ -13,8 +13,8 @@ const MALE_COUNT  = Math.round((MALE_PCT / 100) * TOTAL_PENDUDUK);
 const FEMALE_COUNT = TOTAL_PENDUDUK - MALE_COUNT;
 
 const DUSUN = [
-  { name: process.env.NEXT_PUBLIC_DUSUN_1_NAME ?? "Dusun Balerejo I",  value: Number(process.env.NEXT_PUBLIC_DUSUN_1_VALUE ?? "0") },
-  { name: process.env.NEXT_PUBLIC_DUSUN_2_NAME ?? "Dusun Balerejo II", value: Number(process.env.NEXT_PUBLIC_DUSUN_2_VALUE ?? "0") },
+  { name: process.env.NEXT_PUBLIC_DUSUN_1_NAME ?? "Balerejo 1", value: Number(process.env.NEXT_PUBLIC_DUSUN_1_VALUE ?? "812") },
+  { name: process.env.NEXT_PUBLIC_DUSUN_2_NAME ?? "Balerejo 2", value: Number(process.env.NEXT_PUBLIC_DUSUN_2_VALUE ?? "654") },
 ];
 const DUSUN_HAS_DATA = DUSUN.some((d) => d.value > 0);
 
